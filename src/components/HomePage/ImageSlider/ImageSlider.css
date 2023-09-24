@@ -1,0 +1,26 @@
+.arrow {
+  font-size: 30px;
+  transform: translateY(-12px);
+  color: black;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.image-slidshow-container {
+  width: 100vw;
+  height: 80%;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.slide-show-dot {
+  cursor: pointer;
+}
+
+.slide {
+  transition: all 1s;
+}
