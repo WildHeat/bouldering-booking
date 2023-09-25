@@ -1,0 +1,72 @@
+.bouldering-classes-section {
+  padding: 2% 5%;
+}
+
+.class {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  flex: 1;
+  min-width: max(49%, 270px);
+  height: 300px;
+  margin-top: 2%;
+}
+
+.class {
+  background-color: var(--accent-color);
+}
+
+.bouldering-inner-container {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+.bouldering-inner-container h1 {
+  font-size: 3.5rem;
+}
+
+.classes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.class {
+  background-size: cover;
+}
+
+.class:hover {
+  scale: 1.025;
+}
+
+.class-kids {
+  background-image: url("../../img/class-kids.jpg");
+}
+
+.class-beginner {
+  background-image: url("../../img/class-adults.jpg");
+}
+
+.class-friends {
+  background-image: url("../../img/class-friends.jpg");
+}
+
+.class-private {
+  background-image: url("../../img/class-private.jpg");
+}
+
+.class-content-container {
+  width: fit-content;
+  padding: 1em;
+  background-color: var(--dark-color);
+}
+
+@media (max-width: 40em) {
+  .bouldering-classes-section {
+    padding: 5% 2em;
+  }
+  .bouldering-classes-section h1 {
+    font-size: 2.5rem;
+  }
+}

@@ -31,17 +31,18 @@ const ImageSlider = ({ slides }) => {
 
   const slideStyle = {
     backgroundImage: `url(${slides[currentIndex].url})`,
-    width: "100%",
-    height: "400px",
-    border: "solid 0.5px black",
-    borderRadius: "10px",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
   };
   return (
     <div className="image-slidshow-container">
-      <h3>{slides[currentIndex].title}</h3>
-      <div style={slideStyle} className="slide"></div>
+      <div style={slideStyle} className="slide">
+        <div className="overlay">
+          <div className="overlay-content-container">
+            <h1>{slides[currentIndex].title}</h1>
+            <p>{slides[currentIndex].description}</p>
+            <div className="image-button">{slides[currentIndex].button}</div>
+          </div>
+        </div>
+      </div>
       <div className="dots-container">
         <div className="left-arrow arrow" onClick={previousSlide}>
           ⇽

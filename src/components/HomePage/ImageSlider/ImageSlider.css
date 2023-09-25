@@ -8,7 +8,7 @@
 
 .image-slidshow-container {
   width: 100vw;
-  height: 80%;
+  height: 50%;
 }
 
 .dots-container {
@@ -22,5 +22,49 @@
 }
 
 .slide {
-  transition: all 1s;
+  transition: all 0.5s;
+  width: 100%;
+  height: min(27rem, 50vh);
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.425);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.75em;
+  color: var(--light-color);
+}
+
+.overlay-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.image-button {
+  padding-inline: 0.5rem;
+  font-size: 1.75rem;
+  margin: 0.5em auto auto auto;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.359);
+  border: solid var(--accent-color);
+}
+
+.image-button:hover {
+  cursor: pointer;
+  background-color: var(--accent-color);
+}
+
+@media (max-width: 40em) {
+  .overlay {
+    font-size: 1.25em;
+  }
 }
