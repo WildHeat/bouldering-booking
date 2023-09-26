@@ -1,9 +1,12 @@
 .header-container {
+  z-index: 99999;
   color: var(--light-color);
   background-color: var(--dark-color);
   display: flex;
   justify-content: space-around;
-  padding-block: 1.5em;
+  padding-block: 1em;
+  position: sticky;
+  top: 0;
 }
 
 .header-links {

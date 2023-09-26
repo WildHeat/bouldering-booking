@@ -3,16 +3,13 @@
 }
 
 .class {
-  background-color: var(--dark-color);
   color: var(--light-color);
   flex: 1;
   min-width: max(49%, 270px);
   height: 300px;
   margin-top: 2%;
-}
-
-.class {
-  background-color: var(--accent-color);
+  background-size: cover;
+  transition: scale 0.5s;
 }
 
 .bouldering-inner-container {
@@ -21,7 +18,7 @@
   margin-inline: auto;
 }
 .bouldering-inner-container h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .classes-container {
@@ -32,12 +29,28 @@
   gap: 2%;
 }
 
-.class {
-  background-size: cover;
+.class-content-container {
+  width: fit-content;
+  padding: 1em;
+  background-color: var(--dark-color);
+  transition: background-color 0.5s;
 }
 
 .class:hover {
   scale: 1.025;
+}
+
+.class:hover .class-content-container {
+  background-color: var(--accent-color);
+}
+
+@media (max-width: 40em) {
+  .bouldering-classes-section {
+    padding: 5% 2em;
+  }
+  .bouldering-classes-section h1 {
+    font-size: 2.5rem;
+  }
 }
 
 .class-kids {
@@ -56,17 +69,48 @@
   background-image: url("../../img/class-private.jpg");
 }
 
-.class-content-container {
-  width: fit-content;
-  padding: 1em;
-  background-color: var(--dark-color);
+.new-climber-image {
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../img/beginner.jpg");
+  flex: 1;
+  min-width: max(49%, 270px);
+  height: 400px;
 }
 
-@media (max-width: 40em) {
-  .bouldering-classes-section {
-    padding: 5% 2em;
-  }
-  .bouldering-classes-section h1 {
-    font-size: 2.5rem;
-  }
+.new-climber-container {
+  padding: 5% 7%;
+  background-color: var(--main-color);
+}
+
+.new-climber-inner-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+  color: var(--light-color);
+  gap: 1em;
+}
+
+.new-climber-content {
+  flex: 1;
+  min-width: max(49%, 270px);
+}
+
+.new-climber-content h2 {
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.new-climber-content p {
+  max-width: 70ch;
+}
+
+.new-climber-button {
+  padding: 1em;
+  width: fit-content;
+  background-color: var(--accent-color);
+}
+
+.new-climber-button:hover {
+  background-color: var(--dark-color);
 }
