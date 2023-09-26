@@ -3,6 +3,7 @@ import ImageSlider from "./ImageSlider/ImageSlider";
 import "./HomePage.css";
 import BoulderingClasses from "./BoulderingClasses";
 import NewClimber from "./NewClimber";
+import Location from "./Location";
 
 const HomePage = () => {
   const slides = [
@@ -29,9 +30,10 @@ const HomePage = () => {
   ];
 
   return (
-    <div>
+    <div className="page-container">
       <ImageSlider slides={slides} />
       <BoulderingClasses />
+      <Location />
       <NewClimber />
     </div>
   );

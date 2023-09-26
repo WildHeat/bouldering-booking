@@ -1,3 +1,6 @@
+.page-container {
+  overflow: hidden;
+}
 .bouldering-classes-section {
   padding: 2% 5%;
 }
@@ -80,7 +83,7 @@
 
 .new-climber-container {
   padding: 5% 7%;
-  background-color: var(--main-color);
+  background-color: var(--dark-color);
 }
 
 .new-climber-inner-container {
@@ -113,4 +116,45 @@
 
 .new-climber-button:hover {
   background-color: var(--dark-color);
+}
+
+.location-outer-container {
+  padding-block: 7%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.location-inner-container {
+  width: 100%;
+}
+
+.location {
+  padding-top: 2em;
+}
+
+.location-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.location-image1 {
+  background-image: url("../../img/location1.jpg");
+}
+
+.location-image2 {
+  background-image: url("../../img/location2.jpg");
+}
+
+.location-image3 {
+  background-image: url("../../img/location3.jpg");
+}
+
+.location-image {
+  background-size: cover;
+  background-position: center;
+  width: max(25%, 300px);
+  height: 20vh;
 }
