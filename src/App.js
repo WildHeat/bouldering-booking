@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage/HomePage";
 import NoPage from "./components/NoPage/NoPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import ClimbPage from "./components/ClimbPage/ClimbPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/climb" element={<ClimbPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
       <Footer />
