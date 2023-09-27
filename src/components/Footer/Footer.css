@@ -18,7 +18,7 @@
 
 .footer-outer-container hr {
   margin: auto;
-  width: 90%;
+  width: 90vw;
 }
 
 .footer-made-with-care {
@@ -32,6 +32,7 @@
 }
 
 .footer-times {
+  margin: auto;
   max-width: 25ch;
 }
 
@@ -50,7 +51,7 @@
 }
 
 .copyright {
-  padding-top: 1em;
+  padding-top: 0.5em;
   padding-bottom: 0.5em;
   text-align: center;
 }
