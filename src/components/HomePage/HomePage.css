@@ -137,7 +137,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 2em;
 }
 
 .location-image1 {
@@ -156,5 +156,5 @@
   background-size: cover;
   background-position: center;
   width: max(25%, 300px);
-  height: 20vh;
+  height: 30vh;
 }

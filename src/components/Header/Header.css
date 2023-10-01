@@ -62,7 +62,7 @@
     position: absolute;
     justify-content: flex-start;
     width: 80%;
-    height: 90%;
+    height: 100vh;
     top: 0%;
     left: -1.5em;
     flex-direction: column;

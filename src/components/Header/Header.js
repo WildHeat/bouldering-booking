@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -13,12 +14,16 @@ const Header = () => {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      <h2 className="logo">
-        AB <span className="bouldering-title">Bouldering</span>
-      </h2>
+      <Link to={"/"}>
+        <h2 className="logo">
+          AB <span className="bouldering-title">Bouldering</span>
+        </h2>
+      </Link>
       <div className="header-links">
         <p className="link">Events</p>
-        <p className="link">Beginner's-guide</p>
+        <Link to={"/climb"}>
+          <p className="link">Beginner's-guide</p>
+        </Link>
         <p className="link">FAQ</p>
         <p className="link">Contact</p>
       </div>
