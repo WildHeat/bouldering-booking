@@ -2,15 +2,17 @@
   background-color: var(--light-color);
   display: flex;
   justify-content: space-between;
-  height: 400vh;
+  height: 300vh;
+  /* height: max(40vh, vw); */
+  /* height: calc(400vh + 100vw); */
   position: relative;
 }
+
 .climb-background {
   background-image: url(../../img/climb\ background.svg);
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 100%;
   z-index: 1;
 }
 
@@ -26,20 +28,48 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   position: absolute;
-  width: 100%;
-  gap: 0% 10%;
-  inset: 20% 0 0 0;
+  gap: 0.5% 10%;
+  margin-top: 50vh;
+  inset: 0 0 0 0;
+  padding: 3%;
 }
 
 .climb-info-card {
-  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
   flex: 1;
-  height: 10%;
-  min-width: max(280px, 40%);
-  /* border: solid var(--light-color); */
-  border-radius: 24px;
+  min-width: max(300px, 40%);
+  margin: auto;
   color: var(--light-color);
   font-size: 1.3rem;
+}
+
+.climb-info-card-text {
+  border-radius: 24px;
+  margin-inline: 3%;
   padding: 1em;
+  background-color: rgba(0, 0, 0, 0.8);
+  max-height: inherit;
+}
+
+.climb-image {
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+}
+
+.climb1 {
+  background-image: url(../../img/climb1.jpg);
+}
+
+.climb2 {
+  background-image: url(../../img/climb2.jpg);
+}
+
+@media (max-width: 710px) {
+  .climb-page-container {
+    height: 700vh;
+  }
+  .climb-info-card {
+    font-size: 1.2rem;
+  }
 }
