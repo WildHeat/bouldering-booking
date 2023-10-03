@@ -15,7 +15,7 @@ function App() {
         <Route path="/climb" element={<ClimbPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

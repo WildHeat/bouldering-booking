@@ -24,10 +24,19 @@
   color: var(--main-color);
 }
 
+.register-container:hover {
+  background-color: var(--light-color);
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
 .register-container {
   padding: 0.25rem 1.25rem;
-  border-radius: 3;
+  border-radius: 3px;
   background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .toggle-container {

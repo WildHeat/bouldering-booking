@@ -28,7 +28,7 @@ const Header = () => {
         <p className="link">Contact</p>
       </div>
       <div className="register-container link">
-        <p>Register</p>
+        <h4>Register</h4>
       </div>
     </div>
   );
