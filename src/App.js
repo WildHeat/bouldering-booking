@@ -5,6 +5,7 @@ import NoPage from "./components/NoPage/NoPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ClimbPage from "./components/ClimbPage/ClimbPage";
+import EventsPage from "./components/EventsPage/EventsPage";
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/climb" element={<ClimbPage />} />
+        <Route path="/events" element={<EventsPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

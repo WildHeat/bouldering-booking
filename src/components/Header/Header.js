@@ -20,7 +20,9 @@ const Header = () => {
         </h2>
       </Link>
       <div className="header-links">
-        <p className="link">Events</p>
+        <Link to={"/events"}>
+          <p className="link">Events</p>
+        </Link>
         <Link to={"/climb"}>
           <p className="link">Beginner's-guide</p>
         </Link>

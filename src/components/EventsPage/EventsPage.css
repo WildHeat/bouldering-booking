@@ -1,0 +1,10 @@
+.events-page-container {
+}
+
+.image-container {
+  background-image: url("../../img/event1.jpg");
+  background-position: 70% 55%;
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+}
