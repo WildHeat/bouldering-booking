@@ -1,6 +1,11 @@
 .events-page-container {
 }
 
+.events-content-container {
+  font-size: 2.5;
+  padding: 2% 5%;
+}
+
 .image-container {
   background-image: url("../../img/event1.jpg");
   background-position: 70% 55%;

@@ -12,7 +12,7 @@ const EventsPage = () => {
         </div>
       </div>
       <div className="events-content-container">
-        <h2>What Events are happening?</h2>
+        <h1>What Events are happening?</h1>
       </div>
     </div>
   );
