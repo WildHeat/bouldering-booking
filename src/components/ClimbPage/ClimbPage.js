@@ -88,7 +88,7 @@ const ClimbPage = () => {
         <div className="climb-bottom-content">
           <h2>Start Climbing!</h2>
           <p>
-            Welcome to City Bouldering! We're passionate about climbing and
+            Welcome to AB Bouldering! We're passionate about climbing and
             helping others become climbers.
           </p>
           <p>
