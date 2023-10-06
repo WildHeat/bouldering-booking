@@ -9,6 +9,10 @@
   top: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header-links {
   display: flex;
   flex-direction: row;
@@ -18,10 +22,12 @@
 }
 .link {
   padding: 0.5rem;
+  color: white;
 }
 
 .link:hover {
-  color: var(--main-color);
+  color: var(--accent-color);
+  cursor: pointer;
 }
 
 .register-container:hover {
@@ -87,6 +93,7 @@
   .logo,
   .register-container {
     z-index: 9999;
+    color: var(--light-color);
   }
 
   .header-container {
