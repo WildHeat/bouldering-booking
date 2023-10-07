@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NewClimber = () => {
   return (
@@ -23,7 +24,9 @@ const NewClimber = () => {
             and let's start this amazing journey together!
           </p>
           <br />
-          <div className="new-climber-button">Start your first climb!</div>
+          <Link to={"/climb"}>
+            <div className="new-climber-button">Start your first climb!</div>
+          </Link>
         </div>
         <div className="new-climber-image"></div>
       </div>

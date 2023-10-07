@@ -26,12 +26,18 @@ const Header = () => {
         <Link to={"/climb"}>
           <p className="link">Beginner's-guide</p>
         </Link>
-        <p className="link">FAQ</p>
-        <p className="link">Contact</p>
+        <Link to={"/faq"}>
+          <p className="link">FAQ</p>
+        </Link>
+        <Link to={"/contact"}>
+          <p className="link">Contact</p>
+        </Link>
       </div>
-      <div className="register-container link">
-        <h4>Register</h4>
-      </div>
+      <Link to={"/register"}>
+        <div className="register-container link">
+          <h4>Register</h4>
+        </div>
+      </Link>
     </div>
   );
 };

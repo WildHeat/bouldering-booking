@@ -9,3 +9,9 @@
   margin: 0;
   padding: 0;
 }
+
+.no-page {
+  background-color: yellow;
+  font-size: 80px;
+  height: 30vh;
+}

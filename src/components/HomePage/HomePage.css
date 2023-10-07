@@ -109,6 +109,7 @@
 }
 
 .new-climber-button {
+  color: var(--light-color);
   padding: 1em;
   width: fit-content;
   background-color: var(--accent-color);
