@@ -16,50 +16,44 @@ const EventsPage = () => {
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
     {
-      title: "Title",
-      shortDescription: "some short description",
+      title: "Free Coaching",
+      shortDescription: "1hr session",
       content:
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
     {
-      title: "Title",
-      shortDescription: "some short description",
+      title: "Bouldering Foundations",
+      shortDescription: "3 week course",
       content:
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
     {
-      title: "Title",
-      shortDescription: "some short description",
+      title: "October Fun",
+      shortDescription: "Free session for beginners",
       content:
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
     {
-      title: "Title",
-      shortDescription: "some short description",
+      title: "AB Bouldering Birthday!",
+      shortDescription: "Full day party",
       content:
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
     {
-      title: "Title",
-      shortDescription: "some short description",
+      title: "Student Social",
+      shortDescription: "2hr session",
       content:
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
     {
-      title: "Title",
-      shortDescription: "some short description",
+      title: "Private Coaching",
+      shortDescription: "1hr session",
       content:
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
     {
-      title: "Title",
-      shortDescription: "some short description",
-      content:
-        "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-    },
-    {
-      title: "Title",
-      shortDescription: "some short description",
+      title: "Social night",
+      shortDescription: "1.5hr session",
       content:
         "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
     },
