@@ -8,5 +8,6 @@ This site is still under development...but take a peek: https://master.d2puivqpp
 - HTML
 - CSS
 - JavaScript
+- Aws
 
 
