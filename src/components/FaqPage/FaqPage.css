@@ -1,3 +1,35 @@
+.faq-content-container {
+  padding: 5% 7%;
+}
+.faq-content-container h1 {
+  font-size: 2.5rem;
+}
+
 .faq-image {
   background-image: url("../../img/faq1.jpg");
+}
+
+.question {
+  padding: 1em;
+  border: solid var(--accent-color);
+  border-radius: 25px;
+  transition: all 1s ease 0s;
+}
+
+.answer {
+  display: none;
+  transition: all 1s ease 0s;
+}
+
+.question:hover {
+  background-color: aqua;
+  transform: translateX(20px);
+}
+
+.question:hover .answer {
+  display: block;
+}
+
+.faq-question {
+  padding-block: 2em;
 }

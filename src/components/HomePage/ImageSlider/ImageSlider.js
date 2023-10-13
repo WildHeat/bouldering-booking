@@ -23,7 +23,7 @@ const ImageSlider = ({ slides }) => {
     }
     timerRef.current = setTimeout(() => {
       nextSlide();
-    }, 10000);
+    }, 5000);
 
     //to not have memory leaks
     return () => clearTimeout(timerRef.current);

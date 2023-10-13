@@ -24,7 +24,7 @@ const NewClimber = () => {
             and let's start this amazing journey together!
           </p>
           <br />
-          <Link to={"/climb"}>
+          <Link to={"/climb"} className="new-climber-button-container">
             <div className="new-climber-button">Start your first climb!</div>
           </Link>
         </div>
