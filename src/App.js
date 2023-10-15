@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import ClimbPage from "./components/ClimbPage/ClimbPage";
 import EventsPage from "./components/EventsPage/EventsPage";
 import FaqPage from "./components/FaqPage/FaqPage";
+import ContactPage from "./components/ContactPage/ContactPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/climb" element={<ClimbPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FaqPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
       <Footer />

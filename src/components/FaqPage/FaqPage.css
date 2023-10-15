@@ -11,18 +11,18 @@
 
 .question {
   padding: 1em;
-  border: solid var(--accent-color);
+  border-bottom: solid var(--accent-color);
   border-radius: 25px;
-  transition: all 1s ease 0s;
+  transition: all 1.5s ease 0s;
 }
 
 .answer {
-  display: none;
+  display: flex;
   transition: all 1s ease 0s;
 }
 
 .question:hover {
-  background-color: aqua;
+  background-color: #d68052;
   transform: translateX(20px);
 }
 
