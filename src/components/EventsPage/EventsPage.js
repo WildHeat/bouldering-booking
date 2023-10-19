@@ -4,63 +4,6 @@ import Event from "./Event";
 import Data from "./EventsData.json";
 
 const EventsPage = () => {
-  // const listOfEvent = [
-  //   {
-  //     title: "Kids Events",
-  //     shortDescription: "Free entry for under 16s",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "Beginner Events",
-  //     shortDescription: "1hr session",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "Free Coaching",
-  //     shortDescription: "1hr session",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "Bouldering Foundations",
-  //     shortDescription: "3 week course",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "October Fun",
-  //     shortDescription: "Free session for beginners",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "AB Bouldering Birthday!",
-  //     shortDescription: "Full day party",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "Student Social",
-  //     shortDescription: "2hr session",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "Private Coaching",
-  //     shortDescription: "1hr session",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  //   {
-  //     title: "Social night",
-  //     shortDescription: "1.5hr session",
-  //     content:
-  //       "Some information about something to do witht hte event. I dont know what to put here so yeah...i should just use Lorum ipsum but i guess its too late now :P",
-  //   },
-  // ];
-
   const listOfEvent = Data["data"];
 
   return (

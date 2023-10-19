@@ -22,7 +22,6 @@
 }
 
 .question:hover {
-  background-color: #d68052;
   transform: translateX(20px);
 }
 
