@@ -20,7 +20,6 @@ const ContactPage = () => {
           </Link>{" "}
           page.
         </p>
-        <br />
         <div className="contact-form-container">
           <div className="contact-input-container">
             <label>Name</label>
@@ -53,7 +52,7 @@ const ContactPage = () => {
               }}
             />
           </div>
-          <input type="submit" value={"Send"} />
+          <div className="contact-send-button">Send</div>
         </div>
       </div>
     </div>
