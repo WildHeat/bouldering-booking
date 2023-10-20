@@ -39,16 +39,18 @@
 }
 
 .contact-send-button {
-  /* margin-left: 1em; */
   padding: 0.5em 2em 0.6em 2em;
   border-radius: 3px;
   width: fit-content;
   border: solid var(--accent-color);
   margin-top: 1em;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  font-weight: 600;
 }
 
 .contact-send-button:hover {
   cursor: pointer;
-  background-color: var(--accent-color);
-  color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--accent-color);
 }

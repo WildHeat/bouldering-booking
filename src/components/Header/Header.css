@@ -37,7 +37,9 @@ a {
 }
 
 .register-container {
-  padding: 0.25rem 1.25rem;
+  /* padding: 0.25rem 1.25rem; */
+  padding-inline: 1.25rem;
+  padding-top: 0.35rem;
   border-radius: 3px;
   background-color: var(--accent-color);
   display: flex;
