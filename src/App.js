@@ -8,6 +8,8 @@ import ClimbPage from "./components/ClimbPage/ClimbPage";
 import EventsPage from "./components/EventsPage/EventsPage";
 import FaqPage from "./components/FaqPage/FaqPage";
 import ContactPage from "./components/ContactPage/ContactPage";
+import RegisterPage from "./components/RegisterPage/RegisterPage";
+import LoginPage from "./components/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
       <Footer />
