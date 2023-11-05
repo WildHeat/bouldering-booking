@@ -7,6 +7,52 @@ const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState([]);
+
+  function register() {
+    setErrorMessage([]);
+    let errors = [];
+
+    if (firstName === "") {
+      errors.push("First name can not be empty");
+    }
+
+    if (lastName === "") {
+      errors.push("Last name can not be empty");
+    }
+
+    if (password.length < 8) {
+      errors.push("Password needs to be 8 characters or longer");
+    }
+
+    if (!/\d/.test(password)) {
+      errors.push("Password needs to contain at least 1 number");
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      errors.push("Password needs contain at least 1 uppercase letter");
+    }
+
+    if (!/[a-z]/.test(password)) {
+      errors.push("Password needs contain at least 1 lowercase letter");
+    }
+    //// Need to update to include full email validation
+    if (!/[a-zA-Z]/.test(email)) {
+      errors.push("Email must contain at least one letter");
+    }
+
+    if (!/s/.test(email)) {
+      errors.push("Email can't contain any spaces");
+    }
+
+    if (password !== confirmPassword) {
+      errors.push("Password and confirm password doesn't match");
+    }
+
+    setErrorMessage(errors);
+
+    if (errors.length > 0) return;
+  }
 
   return (
     <div className="register-page-container">
@@ -42,7 +88,18 @@ const RegisterPage = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           placeholder="Confirm Password..."
         />
-        <div className="register-button">Register</div>
+        {errorMessage.map((error) => {
+          return (
+            <div key={error}>
+              - {error}
+              <br />
+            </div>
+          );
+        })}
+        <br />
+        <div className="register-button" onClick={() => register()}>
+          Register
+        </div>
       </div>
     </div>
   );
