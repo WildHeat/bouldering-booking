@@ -9,7 +9,7 @@ const RegisterPage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState([]);
 
-  function register() {
+  async function register() {
     setErrorMessage([]);
     let errors = [];
 
@@ -52,6 +52,24 @@ const RegisterPage = () => {
     setErrorMessage(errors);
 
     if (errors.length > 0) return;
+
+    await fetch(process.env.REACT_APP_BASE_URL + "/api/v1/auth/register", {
+      headers: {
+        "Content-type": "application/json",
+      },
+      method: "post",
+      body: JSON.stringify({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+      }),
+    }).then((response) => {
+      if (response.status === 200) {
+        console.log("SUCESS");
+        return;
+      }
+    });
   }
 
   return (
