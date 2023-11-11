@@ -38,3 +38,9 @@
   background-color: var(--accent-color);
   cursor: pointer;
 }
+
+.error-message {
+  color: red;
+  font-size: large;
+  font-weight: 600;
+}

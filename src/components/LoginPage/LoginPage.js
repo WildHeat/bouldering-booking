@@ -4,6 +4,53 @@ import "./LoginPage.css";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState([]);
+
+  const loginRequest = async () => {
+    if (!checkNotEmpty()) return;
+    await fetch(process.env.REACT_APP_BASE_URL + "/api/v1/auth/authenticate", {
+      headers: {
+        "Content-type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        username: email,
+        password: password,
+      }),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log("success");
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((body) => {
+        localStorage.setItem("jwt", body.token);
+      })
+      .catch((reason) => {
+        setErrorMessage(["Failed. Try again."]);
+      });
+  };
+
+  const checkNotEmpty = () => {
+    setErrorMessage([]);
+    let tempErrorMessage = [];
+    if (email === "") {
+      tempErrorMessage.push("Please enter email");
+    }
+
+    if (password === "") {
+      tempErrorMessage.push("Please enter password");
+    }
+
+    setErrorMessage(tempErrorMessage);
+
+    if (tempErrorMessage.length > 0) return false;
+    return true;
+  };
+
   return (
     <div className="login-page-container">
       <div className="login-form-container">
@@ -21,7 +68,15 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter Password..."
         />
-        <div className="login-button">Login</div>
+        <div className="error-message">
+          {errorMessage.map((error, index) => {
+            return <p key={index}>{error}</p>;
+          })}
+        </div>
+        <br />
+        <div className="login-button" onClick={loginRequest}>
+          Login
+        </div>
       </div>
     </div>
   );

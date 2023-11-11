@@ -64,12 +64,17 @@ const RegisterPage = () => {
         email: email,
         password: password,
       }),
-    }).then((response) => {
-      if (response.status === 201) {
-        console.log("SUCESS");
-        return;
-      }
-    });
+    })
+      .then((response) => {
+        if (response.status === 201) {
+          console.log("SUCCESS");
+          return response.json();
+        }
+      })
+      .then((body) => {
+        console.log(body.token);
+        localStorage.setItem("jwt", body.token);
+      });
   }
 
   return (
