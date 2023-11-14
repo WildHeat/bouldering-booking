@@ -10,6 +10,7 @@ import FaqPage from "./components/FaqPage/FaqPage";
 import ContactPage from "./components/ContactPage/ContactPage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
 import LoginPage from "./components/LoginPage/LoginPage";
+import ScrollPage from "./components/ScrollPage/ScrollPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="*" element={<NoPage />} />
       </Routes>
       <Footer />
+      <ScrollPage />
     </BrowserRouter>
   );
 }
