@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./RegisterPage.css";
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -8,6 +9,8 @@ const RegisterPage = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState([]);
+
+  let navigate = useNavigate();
 
   async function register() {
     setErrorMessage([]);
@@ -41,7 +44,7 @@ const RegisterPage = () => {
       errors.push("Email must contain at least one letter");
     }
 
-    if (!/s/.test(email)) {
+    if (/\s/.test(email)) {
       errors.push("Email can't contain any spaces");
     }
 
@@ -72,8 +75,8 @@ const RegisterPage = () => {
         }
       })
       .then((body) => {
-        console.log(body.token);
         localStorage.setItem("jwt", body.token);
+        navigate("/");
       });
   }
 

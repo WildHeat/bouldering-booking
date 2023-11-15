@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState([]);
+
+  let navigate = useNavigate();
 
   const loginRequest = async () => {
     if (!checkNotEmpty()) return;
@@ -28,6 +31,7 @@ const LoginPage = () => {
       })
       .then((body) => {
         localStorage.setItem("jwt", body.token);
+        navigate("/");
       })
       .catch((reason) => {
         setErrorMessage(["Failed. Try again."]);

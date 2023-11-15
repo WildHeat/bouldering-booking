@@ -5,7 +5,6 @@ const ScrollTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log(pathname);
     if (pathname === "/climb") {
       window.scroll(0, 100000);
       return;
