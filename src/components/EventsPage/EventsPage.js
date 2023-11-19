@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./EventsPage.css";
 import Event from "./Event";
 import Data from "./EventsData.json";
 
 const EventsPage = () => {
-  const listOfEvent = Data["data"];
+  const [listOfEvent, setListOfEvents] = useState(Data["data"]);
 
   useEffect(() => {
     const getAllEvents = async () => {
@@ -18,6 +18,7 @@ const EventsPage = () => {
           return response.json();
         })
         .then((body) => {
+          setListOfEvents(body);
           console.log(body);
         })
         .catch((response) => {
@@ -43,7 +44,7 @@ const EventsPage = () => {
             return (
               <Event
                 title={eve.title}
-                description={eve.shortDescription}
+                description={eve.smallDescription}
                 key={index}
               />
             );

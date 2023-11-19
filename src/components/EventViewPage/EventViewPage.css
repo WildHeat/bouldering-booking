@@ -1,0 +1,12 @@
+.head-line {
+  background-color: aqua;
+  display: flex;
+  justify-content: baseline;
+}
+
+.event-information {
+  border: solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

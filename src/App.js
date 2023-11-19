@@ -11,6 +11,7 @@ import ContactPage from "./components/ContactPage/ContactPage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import ScrollPage from "./components/ScrollPage/ScrollPage";
+import EventViewPage from "./components/EventViewPage/EventViewPage";
 
 function App() {
   return (
@@ -20,10 +21,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/climb" element={<ClimbPage />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/events/:id" element={<EventViewPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+
         <Route path="*" element={<NoPage />} />
       </Routes>
       <Footer />
