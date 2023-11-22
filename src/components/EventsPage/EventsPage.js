@@ -43,6 +43,7 @@ const EventsPage = () => {
           {listOfEvent.map((eve, index) => {
             return (
               <Event
+                eventId={eve.id}
                 title={eve.title}
                 description={eve.smallDescription}
                 key={index}
