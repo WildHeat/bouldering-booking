@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./EventViewPage.css";
+import { useNavigate } from "react-router-dom";
 
 const EventViewPage = () => {
   const eventId = window.location.href.split("/events/")[1];
   const [event, setEvent] = useState({});
   const [pageTitle, setPageTitle] = useState("Loading event...");
   const [buttonInfo, setButtonInfo] = useState("Sign up!");
+  const [aboveButtonText, setAboveButtonText] = useState(
+    "What to join this event? Click the button below to book yourself in!"
+  );
+  let navigate = useNavigate();
 
   useEffect(() => {
     const getEvent = async () => {
@@ -28,6 +33,54 @@ const EventViewPage = () => {
     };
     getEvent();
   }, [eventId]);
+
+  useEffect(() => {
+    if (localStorage.getItem("loggedin") === "false") {
+      setAboveButtonText(
+        "Sign in or register an account to lock in your spot!"
+      );
+      setButtonInfo("Login!");
+      return;
+    }
+
+    if (localStorage.getItem("admin") === "true") {
+      setAboveButtonText("What to edit this event? Click the button below!");
+      setButtonInfo("Edit!");
+      return;
+    }
+  }, []);
+
+  const handleEventClick = async () => {
+    if (localStorage.getItem("loggedin") === "false") {
+      navigate("/login");
+      return;
+    }
+    if (localStorage.getItem("admin") === "true") {
+      // ToDO implement admin functionality
+      // redirect to edit page for this event id
+      return;
+    }
+
+    await fetch(
+      process.env.REACT_APP_BASE_URL + `/api/v1/events/${eventId}/add`,
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      }
+    ).then((response) => {
+      console.log(response);
+      if (response.status === 200) {
+        setAboveButtonText("Success! You have been added to the list");
+      } else if (response.status === 409) {
+        setAboveButtonText("You're Already signed up! Nice!");
+      } else {
+        setAboveButtonText("Something went wrong :(");
+      }
+    });
+  };
 
   return (
     <div className="event-view-content-container">
@@ -72,10 +125,15 @@ const EventViewPage = () => {
             <div className="info organiser">Organiser: {event.organiser}</div>
           </div>
           <div className="button-container">
-            <p>
-              What to join this event? Click the button to book yourself in!
-            </p>
-            <div className="event-button">{buttonInfo}</div>
+            <p>{aboveButtonText}</p>
+            <div
+              className="event-button"
+              onClick={() => {
+                handleEventClick();
+              }}
+            >
+              {buttonInfo}
+            </div>
           </div>
         </div>
       </div>

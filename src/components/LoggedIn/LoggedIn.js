@@ -9,6 +9,9 @@ const LoggedIn = () => {
       localStorage.getItem("jwt") === null ||
       localStorage.getItem("jwt") === undefined
     ) {
+      localStorage.setItem("jwt", "");
+      localStorage.setItem("loggedin", false);
+      localStorage.setItem("admin", false);
       return;
     }
 
