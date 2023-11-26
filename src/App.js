@@ -12,6 +12,7 @@ import RegisterPage from "./components/RegisterPage/RegisterPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import ScrollPage from "./components/ScrollPage/ScrollPage";
 import EventViewPage from "./components/EventViewPage/EventViewPage";
+import LoggedIn from "./components/LoggedIn/LoggedIn";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       </Routes>
       <Footer />
       <ScrollPage />
+      <LoggedIn />
     </BrowserRouter>
   );
 }

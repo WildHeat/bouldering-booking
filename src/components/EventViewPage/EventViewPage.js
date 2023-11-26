@@ -5,6 +5,7 @@ const EventViewPage = () => {
   const eventId = window.location.href.split("/events/")[1];
   const [event, setEvent] = useState({});
   const [pageTitle, setPageTitle] = useState("Loading event...");
+  const [buttonInfo, setButtonInfo] = useState("Sign up!");
 
   useEffect(() => {
     const getEvent = async () => {
@@ -61,13 +62,21 @@ const EventViewPage = () => {
           </p>
         </div>
 
-        <div className="event-information">
-          <div className="info date">Date: {event.date}</div>
-          <div className="info max-size">Max size: {event.maxSize}</div>
-          <div className="info spaces-left">
-            Spaces Left: {event.spacesLeft}
+        <div className="event-view-right-container">
+          <div className="event-information">
+            <div className="info date">Date: {event.date}</div>
+            <div className="info max-size">Max size: {event.maxSize}</div>
+            <div className="info spaces-left">
+              Spaces Left: {event.spacesLeft}
+            </div>
+            <div className="info organiser">Organiser: {event.organiser}</div>
           </div>
-          <div className="info organiser">Organiser: {event.organiser}</div>
+          <div className="button-container">
+            <p>
+              What to join this event? Click the button to book yourself in!
+            </p>
+            <div className="event-button">{buttonInfo}</div>
+          </div>
         </div>
       </div>
     </div>

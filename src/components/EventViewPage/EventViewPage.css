@@ -11,8 +11,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  flex: 1;
-  /* width: 29%; */
+  min-width: 250px;
   height: fit-content;
   padding: 0.75em 1em 1em 1em;
 }
@@ -41,10 +40,38 @@
   font-size: 1.3rem;
 }
 
-.event-description-container {
-  flex: 3;
+.event-view-right-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  flex: 1;
+  min-width: 300px;
 }
 
 .event-description {
   max-width: 70ch;
+}
+
+.button-container {
+  text-align: center;
+}
+.button-container p {
+  padding-bottom: 1em;
+}
+
+.event-button {
+  margin-inline: auto;
+  background-color: var(--light-color);
+  color: var(--accent-color);
+  border: solid var(--accent-color);
+  border-radius: 7px;
+  padding: 0.25em 0.5em;
+  width: fit-content;
+}
+
+.event-button:hover {
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  cursor: pointer;
 }

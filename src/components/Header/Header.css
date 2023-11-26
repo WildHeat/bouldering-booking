@@ -1,5 +1,5 @@
 .header-container {
-  z-index: 99999;
+  z-index: 99998;
   color: var(--light-color);
   background-color: var(--dark-color);
   display: flex;
@@ -51,6 +51,17 @@ a {
   display: none;
 }
 
+.logo,
+.register-container {
+  z-index: 99997;
+  position: relative;
+  color: var(--light-color);
+}
+
+.logo:hover {
+  color: var(--accent-color);
+}
+
 @media (max-width: 850px) {
   .toggle-container .bar {
     width: 100%;
@@ -90,12 +101,6 @@ a {
   .show {
     display: flex;
     transform: translateX(0);
-  }
-
-  .logo,
-  .register-container {
-    z-index: 9999;
-    color: var(--light-color);
   }
 
   .header-container {
