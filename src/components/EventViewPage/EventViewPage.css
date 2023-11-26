@@ -6,12 +6,20 @@
 }
 
 .event-information {
-  border: solid var(--accent-color);
+  border: 3.5px solid var(--accent-color);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  flex: 1;
+  /* width: 29%; */
+  height: fit-content;
+  padding: 0.75em 1em 1em 1em;
 }
 
+.head-line h1 {
+  padding-right: 1em;
+}
 .head-line h3 {
   margin-top: auto;
   color: var(--accent-color);
@@ -28,13 +36,15 @@
 .event-information-container {
   display: flex;
   justify-content: space-between;
+  gap: 2em;
   flex-wrap: wrap;
+  font-size: 1.3rem;
+}
+
+.event-description-container {
+  flex: 3;
 }
 
 .event-description {
   max-width: 70ch;
-}
-
-.event-information {
-  width: 29%;
 }

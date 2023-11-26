@@ -47,6 +47,7 @@ const EventsPage = () => {
                 title={eve.title}
                 description={eve.smallDescription}
                 key={index}
+                url={eve.imageUrl}
               />
             );
           })}

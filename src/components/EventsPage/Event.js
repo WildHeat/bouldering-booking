@@ -1,12 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Event = ({ eventId, title, description, index }) => {
+const Event = ({ eventId, title, description, index, url }) => {
   let navigate = useNavigate();
 
   return (
     <div
       className="event"
+      style={{
+        "background-image": `url('${url}')`,
+      }}
       key={index}
       onClick={() => {
         navigate(`/events/${eventId}`);
