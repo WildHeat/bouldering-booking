@@ -13,6 +13,7 @@ import LoginPage from "./components/LoginPage/LoginPage";
 import ScrollPage from "./components/ScrollPage/ScrollPage";
 import EventViewPage from "./components/EventViewPage/EventViewPage";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
+import EditEventPage from "./components/EditEventPage/EditEventPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/climb" element={<ClimbPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/events/:id" element={<EventViewPage />} />
+        <Route path="/events/:id/edit" element={<EditEventPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
