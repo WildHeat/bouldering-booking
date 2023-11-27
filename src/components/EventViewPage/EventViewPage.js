@@ -56,8 +56,7 @@ const EventViewPage = () => {
       return;
     }
     if (localStorage.getItem("admin") === "true") {
-      // ToDO implement admin functionality
-      // redirect to edit page for this event id
+      navigate(`/events/${eventId}/edit`);
       return;
     }
 
