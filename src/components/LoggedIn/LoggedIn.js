@@ -44,7 +44,7 @@ const LoggedIn = () => {
     };
     checkUser();
   }, [pathname]);
-  return <div>LoggedIn</div>;
+  return null;
 };
 
 export default LoggedIn;
