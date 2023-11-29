@@ -28,7 +28,7 @@ const LoggedIn = () => {
             localStorage.setItem("loggedin", true);
             return response.json();
           }
-          throw "error";
+          throw response;
         })
         .then((user) => {
           if (user.role === "ADMIN") {

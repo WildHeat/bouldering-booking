@@ -37,7 +37,7 @@ const AdminEventPage = () => {
   return (
     <div className="admin-event-page-container">
       AdminEventPage {eventId}
-      <EventForm eventData={event} setEvent={setEvent} />
+      <EventForm event={event} setEvent={setEvent} />
     </div>
   );
 };

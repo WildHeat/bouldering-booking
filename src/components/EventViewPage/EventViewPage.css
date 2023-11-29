@@ -47,6 +47,7 @@
   justify-content: center;
   flex: 1;
   min-width: 300px;
+  max-width: 30em;
 }
 
 .event-description {
