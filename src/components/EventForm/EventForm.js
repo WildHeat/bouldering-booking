@@ -1,17 +1,11 @@
 import React from "react";
 
-const EventForm = ({ event, setEvent }) => {
-  // const handleUpdateField = (e) => {
-  //   let temp = event;
-  //   temp[e.target.id] = e.target.value;
-  //   setEvent(temp);
-  //   console.log(event);
-  // };
-
+const EventForm = ({ event, setEvent, listOfAdminNames }) => {
   const handleUpdateField = (e) => {
     const { id, value } = e.target;
     const updatedEvent = { ...event, [id]: value };
     setEvent(updatedEvent);
+    console.log(event);
   };
 
   return (
@@ -32,27 +26,74 @@ const EventForm = ({ event, setEvent }) => {
       <br />
 
       <label htmlFor="description">Description: </label>
-      <input type="text" id="description" value={event.description} />
+      <input
+        type="text"
+        id="description"
+        value={event.description}
+        onChange={(e) => {
+          handleUpdateField(e);
+        }}
+      />
       <br />
 
       <label htmlFor="smallDescription">Small description: </label>
-      <input type="text" id="smallDescription" value={event.smallDescription} />
+      <input
+        type="text"
+        id="smallDescription"
+        value={event.smallDescription}
+        onChange={(e) => {
+          handleUpdateField(e);
+        }}
+      />
       <br />
 
       <label htmlFor="price">Price: </label>
-      <input type="number" id="price" value={event.price} />
+      <input
+        type="number"
+        id="price"
+        value={event.price}
+        onChange={(e) => {
+          handleUpdateField(e);
+        }}
+      />
       <br />
 
       <label htmlFor="maxSize">Max size: </label>
-      <input type="number" id="maxSize" value={event.maxSize} />
+      <input
+        type="number"
+        id="maxSize"
+        value={event.maxSize}
+        onChange={(e) => {
+          handleUpdateField(e);
+        }}
+      />
       <br />
 
       <label htmlFor="date">Date: </label>
-      <input type="date" id="date" value={event.date} />
+      <input
+        type="date"
+        id="date"
+        value={event.date}
+        onChange={(e) => {
+          handleUpdateField(e);
+        }}
+      />
       <br />
 
       <label htmlFor="organiser">Organiser: </label>
-      <input type="text" id="organiser" value={event.organiser} disabled />
+      <select
+        id="organiser"
+        className="admin-names"
+        value={event.organiser}
+        onChange={(e) => {
+          handleUpdateField(e);
+        }}
+      >
+        {listOfAdminNames.map((name) => {
+          return <option value={name}>{name}</option>;
+        })}
+      </select>
+      {/* <input type="text" id="organiser" value={event.organiser} disabled /> */}
       <br />
     </div>
   );

@@ -61,7 +61,7 @@ const EventViewPage = () => {
     }
 
     await fetch(
-      process.env.REACT_APP_BASE_URL + `/api/v1/events/${eventId}/add`,
+      process.env.REACT_APP_BASE_URL + `/api/v1/events/add-user/${eventId}`,
       {
         method: "GET",
         headers: {
@@ -69,16 +69,26 @@ const EventViewPage = () => {
           Authorization: `Bearer ${localStorage.getItem("jwt")}`,
         },
       }
-    ).then((response) => {
-      console.log(response);
-      if (response.status === 200) {
-        setAboveButtonText("Success! You have been added to the list");
-      } else if (response.status === 409) {
-        setAboveButtonText("You're Already signed up! Nice!");
-      } else {
-        setAboveButtonText("Something went wrong :(");
-      }
-    });
+    )
+      .then((response) => {
+        console.log(response);
+        if (response.status === 200) {
+          setAboveButtonText("Success! You have been added to the list");
+          return response.json();
+        } else if (response.status === 409) {
+          setAboveButtonText("You're Already signed up! Nice!");
+          return response.json();
+        } else {
+          setAboveButtonText("Something went wrong :(");
+          throw response;
+        }
+      })
+      .then((body) => {
+        setEvent(body);
+      })
+      .catch((response) => {
+        console.log(response);
+      });
   };
 
   return (

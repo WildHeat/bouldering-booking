@@ -1,1 +1,14 @@
+.submit-form-button {
+  width: fit-content;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  border-radius: 4%;
+  padding: 0.5em 1em;
+  border: solid var(--accent-color);
+}
 
+.submit-form-button:hover {
+  cursor: pointer;
+  background-color: var(--light-color);
+  color: var(--accent-color);
+}

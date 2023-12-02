@@ -40,6 +40,7 @@ const LoggedIn = () => {
         .catch(() => {
           localStorage.setItem("jwt", "");
           localStorage.setItem("admin", false);
+          localStorage.setItem("loggedin", false);
         });
     };
     checkUser();

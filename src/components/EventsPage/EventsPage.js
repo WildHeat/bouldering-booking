@@ -19,11 +19,8 @@ const EventsPage = () => {
         })
         .then((body) => {
           setListOfEvents(body);
-          console.log(body);
         })
-        .catch((response) => {
-          console.log(response);
-        });
+        .catch((response) => {});
     };
     getAllEvents();
   }, []);
