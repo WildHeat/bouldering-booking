@@ -5,6 +5,7 @@ import EventForm from "../EventForm/EventForm";
 const EditEventPage = () => {
   const eventId = window.location.href.split("/")[4];
   const [listOfAdminNames, setListOfAdminNames] = useState([]);
+  const [responseMessage, setResponseMessage] = useState("");
   const [event, setEvent] = useState({
     id: undefined,
     title: "",
@@ -72,8 +73,7 @@ const EditEventPage = () => {
   }, [eventId]);
 
   const handleSubmitEditEvent = async () => {
-    console.log(event);
-
+    setResponseMessage("Loading...");
     await fetch(process.env.REACT_APP_BASE_URL + "/api/v1/events", {
       method: "PUT",
       headers: {
@@ -84,12 +84,13 @@ const EditEventPage = () => {
     })
       .then((response) => {
         if (response.status === 200) {
-          console.log("UPDATED!");
+          setResponseMessage("Updated!");
         } else {
           throw response;
         }
       })
       .catch((response) => {
+        setResponseMessage(response.body);
         console.log(response.status);
       });
   };
@@ -110,6 +111,7 @@ const EditEventPage = () => {
       >
         Submit
       </div>
+      {responseMessage}
     </div>
   );
 };

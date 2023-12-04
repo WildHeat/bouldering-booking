@@ -28,7 +28,7 @@ const EventViewPage = () => {
           setEvent(body);
         })
         .catch(() => {
-          setPageTitle("Cannot find event");
+          setPageTitle("Can not find event");
         });
     };
     getEvent();
@@ -44,7 +44,7 @@ const EventViewPage = () => {
     }
 
     if (localStorage.getItem("admin") === "true") {
-      setAboveButtonText("What to edit this event? Click the button below!");
+      setAboveButtonText("Want to edit this event? Click the button below!");
       setButtonInfo("Edit!");
       return;
     }
@@ -127,6 +127,7 @@ const EventViewPage = () => {
         <div className="event-view-right-container">
           <div className="event-information">
             <div className="info date">Date: {event.date}</div>
+            <div className="info price">Price: £ {event.price}</div>
             <div className="info max-size">Max size: {event.maxSize}</div>
             <div className="info spaces-left">
               Spaces Left: {event.spacesLeft}
