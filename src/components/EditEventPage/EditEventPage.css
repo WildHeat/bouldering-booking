@@ -1,4 +1,6 @@
 .submit-form-button {
+  margin-inline: auto;
+  margin-block: 1em;
   width: fit-content;
   background-color: var(--accent-color);
   color: var(--light-color);
@@ -11,4 +13,9 @@
   cursor: pointer;
   background-color: var(--light-color);
   color: var(--accent-color);
+}
+
+.admin-event-page-container h1,
+.response-message {
+  text-align: center;
 }

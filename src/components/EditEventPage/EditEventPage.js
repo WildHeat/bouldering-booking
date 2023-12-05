@@ -98,12 +98,13 @@ const EditEventPage = () => {
 
   return (
     <div className="admin-event-page-container">
-      AdminEventPage {eventId}
+      <h1>Edit Event - {eventId}</h1>
       <EventForm
         event={event}
         setEvent={setEvent}
         listOfAdminNames={listOfAdminNames}
       />
+      <div className="response-message">{responseMessage}</div>
       <div
         className="submit-form-button"
         onClick={() => {
@@ -112,7 +113,6 @@ const EditEventPage = () => {
       >
         Submit
       </div>
-      {responseMessage}
     </div>
   );
 };

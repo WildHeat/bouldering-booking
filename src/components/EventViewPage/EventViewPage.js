@@ -133,7 +133,7 @@ const EventViewPage = () => {
                 : ""}
             </div>
             <div className="info date">
-              Time:
+              Time:{" "}
               {event.date !== "" && event.date !== null
                 ? event.date.split("T")[1].substring(0, 5)
                 : ""}
