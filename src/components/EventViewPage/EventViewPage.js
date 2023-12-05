@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const EventViewPage = () => {
   const eventId = window.location.href.split("/events/")[1];
-  const [event, setEvent] = useState({});
+  const [event, setEvent] = useState({ date: "" });
   const [pageTitle, setPageTitle] = useState("Loading event...");
   const [buttonInfo, setButtonInfo] = useState("Sign up!");
   const [aboveButtonText, setAboveButtonText] = useState(
@@ -126,7 +126,18 @@ const EventViewPage = () => {
 
         <div className="event-view-right-container">
           <div className="event-information">
-            <div className="info date">Date: {event.date}</div>
+            <div className="info date">
+              Date:{" "}
+              {event.date !== "" && event.date !== null
+                ? event.date.split("T")[0]
+                : ""}
+            </div>
+            <div className="info date">
+              Time:
+              {event.date !== "" && event.date !== null
+                ? event.date.split("T")[1].substring(0, 5)
+                : ""}
+            </div>
             <div className="info price">Price: £ {event.price}</div>
             <div className="info max-size">Max size: {event.maxSize}</div>
             <div className="info spaces-left">

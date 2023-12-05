@@ -3,7 +3,7 @@ import EventForm from "../EventForm/EventForm";
 
 const CreateEventPage = () => {
   const [listOfAdminNames, setListOfAdminNames] = useState([]);
-  const [responseMessage, setResponseMessage] = useState("");
+  const [responseMessage, setResponseMessage] = useState([]);
   const [event, setEvent] = useState({
     id: undefined,
     title: "",
@@ -13,6 +13,7 @@ const CreateEventPage = () => {
     maxSize: 1,
     date: Date.now(),
     organiser: "",
+    imageUrl: "",
   });
 
   useEffect(() => {
@@ -44,9 +45,43 @@ const CreateEventPage = () => {
     listOfAdmins();
   }, []);
 
-  const eventChecks = () => {};
+  const eventChecks = () => {
+    let errorMessage = [];
+    if (event.title === "") {
+      errorMessage.push("Title cannot be empty");
+    }
+    if (event.description === "") {
+      errorMessage.push("Description cannot be empty");
+    }
+
+    if (event.smallDescription === "") {
+      errorMessage.push("Small description cannot be empty");
+    }
+    if (event.maxSize < 1) {
+      errorMessage.push("Max size must be more than 0");
+    }
+    console.log("////////  DATE CHECK  //////");
+    console.log(new Date(event.date));
+    console.log(Date.now());
+    console.log(new Date(event.date) - Date.now());
+    if (new Date(event.date) - Date.now() < 0) {
+      errorMessage.push("Event must be in the future");
+    }
+    if (event.organiser === "") {
+      errorMessage.push("Please select an organiser");
+    }
+    setResponseMessage(errorMessage);
+    if (errorMessage.length > 0) {
+      return false;
+    }
+    return true;
+  };
 
   const handleSubmitnewEvent = async () => {
+    if (!eventChecks()) {
+      return;
+    }
+
     await fetch(process.env.REACT_APP_BASE_URL + "/api/v1/events", {
       method: "POST",
       headers: {
@@ -77,7 +112,9 @@ const CreateEventPage = () => {
         setEvent={setEvent}
         listOfAdminNames={listOfAdminNames}
       />
-      {responseMessage}
+      {responseMessage.map((message) => {
+        return <p>{message}</p>;
+      })}
       <div
         className="submit-form-button"
         onClick={() => {

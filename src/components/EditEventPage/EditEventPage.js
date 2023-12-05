@@ -15,6 +15,7 @@ const EditEventPage = () => {
     maxSize: 1,
     date: Date.now(),
     organiser: "",
+    imageUrl: "",
   });
 
   useEffect(() => {

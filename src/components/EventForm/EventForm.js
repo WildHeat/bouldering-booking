@@ -5,7 +5,6 @@ const EventForm = ({ event, setEvent, listOfAdminNames }) => {
     const { id, value } = e.target;
     const updatedEvent = { ...event, [id]: value };
     setEvent(updatedEvent);
-    console.log(event);
   };
 
   return (
@@ -47,6 +46,17 @@ const EventForm = ({ event, setEvent, listOfAdminNames }) => {
       />
       <br />
 
+      <label htmlFor="imageUrl">Image url: </label>
+      <input
+        type="text"
+        id="imageUrl"
+        value={event.imageUrl}
+        onChange={(e) => {
+          handleUpdateField(e);
+        }}
+      />
+      <br />
+
       <label htmlFor="price">Price: </label>
       <input
         type="number"
@@ -71,7 +81,7 @@ const EventForm = ({ event, setEvent, listOfAdminNames }) => {
 
       <label htmlFor="date">Date: </label>
       <input
-        type="date"
+        type="datetime-local"
         id="date"
         value={event.date}
         onChange={(e) => {
