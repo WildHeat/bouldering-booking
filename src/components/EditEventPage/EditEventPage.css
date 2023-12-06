@@ -16,6 +16,7 @@
 }
 
 .admin-event-page-container h1,
-.response-message {
+.response-message,
+.create-event-page-container h1 {
   text-align: center;
 }

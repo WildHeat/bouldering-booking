@@ -105,7 +105,7 @@ const CreateEventPage = () => {
   };
 
   return (
-    <div>
+    <div className="create-event-page-container">
       <h1>Create New Event</h1>
       <EventForm
         event={event}

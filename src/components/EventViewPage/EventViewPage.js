@@ -10,7 +10,8 @@ const EventViewPage = () => {
   const [aboveButtonText, setAboveButtonText] = useState(
     "What to join this event? Click the button below to book yourself in!"
   );
-  let navigate = useNavigate();
+  const [adminDeleteButton, setAdminDeleteButton] = useState(<></>);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getEvent = async () => {
@@ -46,6 +47,9 @@ const EventViewPage = () => {
     if (localStorage.getItem("admin") === "true") {
       setAboveButtonText("Want to edit this event? Click the button below!");
       setButtonInfo("Edit!");
+      setAdminDeleteButton(
+        <button className="admin-delete-button">Delete</button>
+      );
       return;
     }
   }, []);
@@ -147,15 +151,16 @@ const EventViewPage = () => {
           </div>
           <div className="button-container">
             <p>{aboveButtonText}</p>
-            <div
+            <button
               className="event-button"
               onClick={() => {
                 handleEventClick();
               }}
             >
               {buttonInfo}
-            </div>
+            </button>
           </div>
+          {adminDeleteButton}
         </div>
       </div>
     </div>

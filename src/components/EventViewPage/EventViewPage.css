@@ -61,7 +61,9 @@
   padding-bottom: 1em;
 }
 
-.event-button {
+.event-button,
+.admin-delete-button {
+  font-size: 20px;
   margin-inline: auto;
   background-color: var(--light-color);
   color: var(--accent-color);
@@ -71,7 +73,8 @@
   width: fit-content;
 }
 
-.event-button:hover {
+.event-button:hover,
+.admin-delete-button:hover {
   background-color: var(--accent-color);
   color: var(--light-color);
   cursor: pointer;

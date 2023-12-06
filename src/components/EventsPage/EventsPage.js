@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./EventsPage.css";
 import Event from "./Event";
 import Data from "./EventsData.json";
+import { useNavigate } from "react-router-dom";
 
 const EventsPage = () => {
+  let navigate = useNavigate();
   const [listOfEvent, setListOfEvents] = useState(Data["data"]);
+  const [editButton, setEditButton] = useState(<></>);
 
   useEffect(() => {
     const getAllEvents = async () => {
@@ -24,6 +27,19 @@ const EventsPage = () => {
     };
     getAllEvents();
   }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem("admin") === "true") {
+      setEditButton(
+        <button
+          className="admin-edit-button"
+          onClick={() => navigate("/events/create")}
+        >
+          Add new Event
+        </button>
+      );
+    }
+  }, [navigate]);
 
   return (
     <div className="events-page-container">
@@ -49,6 +65,7 @@ const EventsPage = () => {
             );
           })}
         </div>
+        <div className="admin-edit-button-container">{editButton}</div>
       </div>
     </div>
   );
