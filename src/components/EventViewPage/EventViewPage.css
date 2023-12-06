@@ -79,3 +79,27 @@
   color: var(--light-color);
   cursor: pointer;
 }
+
+.delete-overlay {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.468);
+}
+
+.modal {
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--light-color);
+  padding: 1em;
+}
+
+.overlay-delete-button {
+  font-size: large;
+  margin: 1em 1em 0.2em 1em;
+  width: 5em;
+  padding: 0.5em 0.25em;
+}

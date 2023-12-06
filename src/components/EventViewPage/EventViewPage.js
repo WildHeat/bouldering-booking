@@ -10,8 +10,31 @@ const EventViewPage = () => {
   const [aboveButtonText, setAboveButtonText] = useState(
     "What to join this event? Click the button below to book yourself in!"
   );
-  const [adminDeleteButton, setAdminDeleteButton] = useState(<></>);
+  const [adminDeleteButton, setAdminDeleteButton] = useState(false);
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => setShowModal(!showModal);
+
+  const handleDeleteEvent = async () => {
+    await fetch(process.env.REACT_APP_BASE_URL + `/api/v1/events/${eventId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      },
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          alert("Event deleted");
+          navigate("/events");
+          return;
+        }
+        throw response;
+      })
+      .catch((response) => {
+        alert(`Something went wrong ${response.status}`);
+      });
+  };
 
   useEffect(() => {
     const getEvent = async () => {
@@ -47,10 +70,7 @@ const EventViewPage = () => {
     if (localStorage.getItem("admin") === "true") {
       setAboveButtonText("Want to edit this event? Click the button below!");
       setButtonInfo("Edit!");
-      setAdminDeleteButton(
-        <button className="admin-delete-button">Delete</button>
-      );
-      return;
+      setAdminDeleteButton(true);
     }
   }, []);
 
@@ -160,9 +180,36 @@ const EventViewPage = () => {
               {buttonInfo}
             </button>
           </div>
-          {adminDeleteButton}
+          {adminDeleteButton && (
+            <button
+              className="admin-delete-button"
+              onClick={() => toggleModal()}
+            >
+              Delete
+            </button>
+          )}
         </div>
       </div>
+      {showModal && (
+        <div className="modal-container">
+          <div className="delete-overlay" onClick={() => toggleModal()}></div>
+          <div className="modal">
+            <h2>Are you sure you want to delete this event?</h2>
+            <button
+              className="overlay-delete-button"
+              onClick={() => handleDeleteEvent()}
+            >
+              Yes
+            </button>
+            <button
+              className="overlay-delete-button"
+              onClick={() => toggleModal()}
+            >
+              No
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

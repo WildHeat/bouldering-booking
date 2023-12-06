@@ -86,6 +86,7 @@ const EditEventPage = () => {
       .then((response) => {
         if (response.status === 200) {
           setResponseMessage("Updated!");
+          alert("Updated");
         } else {
           throw response;
         }

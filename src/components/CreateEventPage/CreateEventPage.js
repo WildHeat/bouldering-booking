@@ -60,10 +60,7 @@ const CreateEventPage = () => {
     if (event.maxSize < 1) {
       errorMessage.push("Max size must be more than 0");
     }
-    console.log("////////  DATE CHECK  //////");
-    console.log(new Date(event.date));
-    console.log(Date.now());
-    console.log(new Date(event.date) - Date.now());
+
     if (new Date(event.date) - Date.now() < 0) {
       errorMessage.push("Event must be in the future");
     }
@@ -98,6 +95,9 @@ const CreateEventPage = () => {
       })
       .then((body) => {
         setEvent({ ...body });
+        let errorMessage = [];
+        errorMessage.push("Success");
+        setResponseMessage(errorMessage);
       })
       .catch((response) => {
         console.log(response.status);
