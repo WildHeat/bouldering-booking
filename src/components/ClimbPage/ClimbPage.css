@@ -121,3 +121,18 @@
 .climb-up-message {
   color: var(--accent-color);
 }
+
+.start-now-container {
+  padding: 0.3em 1.25rem;
+  border-radius: 3px;
+  background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.start-now-container:hover {
+  background-color: var(--light-color);
+  color: var(--accent-color);
+  cursor: pointer;
+}

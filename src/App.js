@@ -15,6 +15,7 @@ import EventViewPage from "./components/EventViewPage/EventViewPage";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
 import EditEventPage from "./components/EditEventPage/EditEventPage";
 import CreateEventPage from "./components/CreateEventPage/CreateEventPage";
+import MyEventsPage from "./components/MyEventsPage/MyEventsPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/events/:id" element={<EventViewPage />} />
         <Route path="/events/:id/edit" element={<EditEventPage />} />
         <Route path="/events/create" element={<CreateEventPage />} />
+        <Route path="/my-events" element={<MyEventsPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />

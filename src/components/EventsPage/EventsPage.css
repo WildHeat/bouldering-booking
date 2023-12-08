@@ -38,11 +38,18 @@
   color: var(--accent-color);
 }
 
-.event-text-container {
+.event-text-container,
+.event-date-time-container {
   width: fit-content;
   padding: 0.5em;
   color: var(--light-color);
   background-color: var(--dark-color);
+}
+
+.event-date-time-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }
 
 .admin-edit-button {

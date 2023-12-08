@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import "./ClimbPage.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ClimbPage = () => {
   const [scrollTop, setScrollTop] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -24,7 +26,10 @@ const ClimbPage = () => {
       <div className="climb-page-container">
         <div className="climb-background"></div>
         <div className="climb-register">
-          <div className="register-container">
+          <div
+            className="start-now-container"
+            onClick={() => navigate("/register")}
+          >
             <h3>Start Now!</h3>
           </div>
         </div>

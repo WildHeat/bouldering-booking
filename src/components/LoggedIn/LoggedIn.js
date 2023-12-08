@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const LoggedIn = () => {
@@ -7,7 +7,8 @@ const LoggedIn = () => {
   useEffect(() => {
     if (
       localStorage.getItem("jwt") === null ||
-      localStorage.getItem("jwt") === undefined
+      localStorage.getItem("jwt") === undefined ||
+      localStorage.getItem("jwt") === ""
     ) {
       localStorage.setItem("jwt", "");
       localStorage.setItem("loggedin", false);
