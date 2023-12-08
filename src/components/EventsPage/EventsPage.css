@@ -23,6 +23,7 @@
   min-width: 300px;
   min-height: 200px;
   margin-bottom: 2%;
+  position: relative;
 }
 
 .all-events-container {
@@ -47,9 +48,12 @@
 }
 
 .event-date-time-container {
-  position: fixed;
-  right: 0;
+  position: absolute;
   bottom: 0;
+  right: 0;
+  /* padding: 0; */
+  /* width: 100%;
+  height: 100%; */
 }
 
 .admin-edit-button {

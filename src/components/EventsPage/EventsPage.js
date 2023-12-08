@@ -54,6 +54,13 @@ const EventsPage = () => {
         <h1>What Events are happening?</h1>
         <div className="all-events-container">
           {listOfEvent.map((eve, index) => {
+            let date = "";
+            let time = "";
+            if (eve.date !== null && eve.date !== undefined) {
+              date = eve.date.split("T")[0];
+              time = eve.date.split("T")[1].substring(0, 5);
+            }
+
             return (
               <Event
                 eventId={eve.id}
@@ -61,6 +68,8 @@ const EventsPage = () => {
                 description={eve.smallDescription}
                 key={index}
                 url={eve.imageUrl}
+                date={date}
+                time={time}
               />
             );
           })}
