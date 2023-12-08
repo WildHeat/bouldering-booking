@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./MyEventsPage.css";
+import Event from "../EventsPage/Event";
 
 const MyEventsPage = () => {
   const [listOfEvents, setListOfEvents] = useState([]);
@@ -39,8 +40,25 @@ const MyEventsPage = () => {
   return (
     <div className="my-events-page-container">
       <h1>My Events</h1>
-      {listOfEvents.map((event) => {
-        return event.title;
+      {listOfEvents.map((eve, index) => {
+        let date = "";
+        let time = "";
+        if (eve.date !== null && eve.date !== undefined) {
+          date = eve.date.split("T")[0];
+          time = eve.date.split("T")[1].substring(0, 5);
+        }
+
+        return (
+          <Event
+            eventId={eve.id}
+            title={eve.title}
+            description={eve.smallDescription}
+            key={index}
+            url={eve.imageUrl}
+            date={date}
+            time={time}
+          />
+        );
       })}
     </div>
   );
