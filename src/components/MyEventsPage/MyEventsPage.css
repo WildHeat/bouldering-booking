@@ -1,0 +1,20 @@
+.my-events-page-container {
+  padding: 5% 7%;
+}
+
+.my-events-page-container h1 {
+  font-size: 2.5em;
+}
+
+.my-events-events-container {
+  width: 100%;
+  padding-block: 2em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.my-events-sub-title {
+  color: var(--accent-color);
+}

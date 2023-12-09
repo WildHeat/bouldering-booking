@@ -24,6 +24,16 @@
   min-height: 200px;
   margin-bottom: 2%;
   position: relative;
+  transition: all 0.2s;
+}
+
+.event:hover {
+  cursor: pointer;
+  scale: 1.025;
+
+  .event-date-time-container {
+    background-color: var(--accent-color);
+  }
 }
 
 .all-events-container {
@@ -45,6 +55,7 @@
   padding: 0.5em;
   color: var(--light-color);
   background-color: var(--dark-color);
+  transition: all 0.4s;
 }
 
 .event-date-time-container {
