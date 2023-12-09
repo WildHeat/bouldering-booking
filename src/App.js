@@ -16,6 +16,7 @@ import LoggedIn from "./components/LoggedIn/LoggedIn";
 import EditEventPage from "./components/EditEventPage/EditEventPage";
 import CreateEventPage from "./components/CreateEventPage/CreateEventPage";
 import MyEventsPage from "./components/MyEventsPage/MyEventsPage";
+import AccountPage from "./components/AccountPage/AccountPage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/account" element={<AccountPage />} />
 
         <Route path="*" element={<NoPage />} />
       </Routes>

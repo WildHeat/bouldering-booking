@@ -74,7 +74,7 @@ const EventViewPage = () => {
     }
   }, []);
 
-  const handleEventClick = async () => {
+  const handleEventClick = () => {
     if (localStorage.getItem("loggedin") === "false") {
       navigate("/login");
       return;
@@ -83,9 +83,17 @@ const EventViewPage = () => {
       navigate(`/events/${eventId}/edit`);
       return;
     }
+    if (new Date(event.date) < Date.now()) {
+      setAboveButtonText("Event has already past. Sorry!");
+      return;
+    }
+    addUserToEvent();
+  };
 
+  const addUserToEvent = async () => {
     await fetch(
-      process.env.REACT_APP_BASE_URL + `/api/v1/events/add-user/${eventId}`,
+      process.env.REACT_APP_BASE_URL +
+        `/api/v1/events/user/add-user/${eventId}`,
       {
         method: "GET",
         headers: {

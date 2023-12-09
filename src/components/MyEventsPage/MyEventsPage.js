@@ -14,7 +14,7 @@ const MyEventsPage = () => {
 
     const getMyEvents = async () => {
       await fetch(
-        process.env.REACT_APP_BASE_URL + "/api/v1/events/get-my-events",
+        process.env.REACT_APP_BASE_URL + "/api/v1/events/user/get-my-events",
         {
           method: "GET",
           headers: {
@@ -65,10 +65,12 @@ const MyEventsPage = () => {
     <div className="my-events-page-container">
       <h1>My Events</h1>
       <h3 className="my-events-sub-title">
-        These are the events you have signed up for!
+        {localStorage.getItem("admin") === "true"
+          ? "These are the events you are organising!"
+          : "These are the events you have signed up for!"}
       </h3>
       <br />
-      <h3 className="my-events-coming-up-title">Comming up!</h3>
+      <h3 className="my-events-coming-up-title">Event that are coming up!</h3>
       <div className="my-events-events-container">
         {listOfEventsFuture.map((eve, index) => {
           let date = "";
