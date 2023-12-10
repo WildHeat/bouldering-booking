@@ -1,3 +1,35 @@
 .edit-account-form-contaner {
   margin-top: 3em;
 }
+
+.edit-account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.edit-account-form p,
+label {
+  font-size: 1.5em;
+}
+.edit-account-form p u {
+  font-size: 0.7em;
+}
+.edit-account-form input {
+  width: 15em;
+  height: 1.8em;
+}
+.change-password {
+  color: var(--accent-color);
+  margin: -1.5em 0em -1em 0em;
+}
+.change-password:hover {
+  cursor: pointer;
+}
+
+#status-message {
+  color: red;
+  font-weight: 600;
+  font-size: 1em;
+  margin-block: -1em;
+}

@@ -72,7 +72,14 @@ const AccountPage = () => {
             Edit
           </button>
         </div>
-        {showEditForm && <EditAccountForm />}
+        {showEditForm && (
+          <EditAccountForm
+            firstname={user.firstName}
+            lastname={user.lastName}
+            userEmail={user.email}
+            setUser={setUser}
+          />
+        )}
       </div>
     </div>
   );

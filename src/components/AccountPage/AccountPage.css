@@ -18,7 +18,8 @@
   font-size: 1.5em;
 }
 
-.edit-button {
+.edit-button,
+.submit-edit-button {
   font-size: 1.12em;
   padding: 0.2em 1.5em;
   width: fit-content;
@@ -28,7 +29,8 @@
   border-radius: 0.5em;
 }
 
-.edit-button:hover {
+.edit-button:hover,
+.submit-edit-button:hover {
   background-color: white;
   color: var(--accent-color);
   cursor: pointer;
@@ -36,5 +38,7 @@
 
 .account-content-container {
   display: flex;
-  gap: 5em;
+  flex-wrap: wrap;
+  gap: 1em 5em;
+  /* justify-content: space-evenly; */
 }
