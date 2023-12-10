@@ -7,7 +7,7 @@
   font-size: 2.5em;
 }
 
-.account-content-container {
+.account-details-container {
   margin-top: 3em;
   display: flex;
   flex-direction: column;
@@ -16,4 +16,25 @@
 
 .account-detail {
   font-size: 1.5em;
+}
+
+.edit-button {
+  font-size: 1.12em;
+  padding: 0.2em 1.5em;
+  width: fit-content;
+  background-color: var(--accent-color);
+  color: white;
+  border: solid var(--accent-color);
+  border-radius: 0.5em;
+}
+
+.edit-button:hover {
+  background-color: white;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.account-content-container {
+  display: flex;
+  gap: 5em;
 }

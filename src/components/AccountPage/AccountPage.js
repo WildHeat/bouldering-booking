@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "./AccountPage.css";
 import { Link, useNavigate } from "react-router-dom";
+import EditAccountForm from "../EditAccountForm/EditAccountForm";
 
 const AccountPage = () => {
   const [user, setUser] = useState({});
   const [additionalComponents, setAdditionalComponents] = useState(<></>);
+  const [showEditForm, setShowEditForm] = useState(false);
 
   const navigate = useNavigate();
 
@@ -54,13 +56,23 @@ const AccountPage = () => {
       <h1>My Account</h1>
 
       <div className="account-content-container">
-        <p className="account-detail">First Name: {user.firstName}</p>
-        <p className="account-detail">Last Name: {user.lastName}</p>
-        <p className="account-detail">Email: {user.email}</p>
-        <p className="account-detail">
-          Booked Events: <Link to={"/my-events"}>Events</Link>
-        </p>
-        {additionalComponents}
+        <div className="account-details-container">
+          <h3>Your details</h3>
+          <p className="account-detail">First Name: {user.firstName}</p>
+          <p className="account-detail">Last Name: {user.lastName}</p>
+          <p className="account-detail">Email: {user.email}</p>
+          <p className="account-detail">
+            Booked Events: <Link to={"/my-events"}>Events</Link>
+          </p>
+          {additionalComponents}
+          <button
+            className="edit-button"
+            onClick={() => setShowEditForm(!showEditForm)}
+          >
+            Edit
+          </button>
+        </div>
+        {showEditForm && <EditAccountForm />}
       </div>
     </div>
   );
