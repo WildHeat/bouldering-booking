@@ -1,10 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const toggle = () => {
     let element = document.getElementsByClassName("header-links")[0];
     element.classList.toggle("show");
+  };
+
+  const closeNavBar = () => {
+    let element = document.getElementsByClassName("header-links")[0];
+    element.classList.remove("show");
+  };
+
+  const navigateTo = (location) => {
+    closeNavBar();
+    navigate(location);
   };
 
   return (
@@ -14,18 +26,30 @@ const Header = () => {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      <Link to={"/"}>
+      <div
+        onClick={() => {
+          navigateTo("/");
+        }}
+      >
         <h2 className="logo">
           AB <span className="bouldering-title">Bouldering</span>
         </h2>
-      </Link>
+      </div>
       <div className="header-links">
-        <Link to={"/events"}>
+        <div
+          onClick={() => {
+            navigateTo("/events");
+          }}
+        >
           <p className="link">Events</p>
-        </Link>
-        <Link to={"/climb"}>
+        </div>
+        <div
+          onClick={() => {
+            navigateTo("/climb");
+          }}
+        >
           <p className="link">Beginner's-guide</p>
-        </Link>
+        </div>
         <Link to={"/faq"}>
           <p className="link">FAQ</p>
         </Link>
@@ -33,11 +57,18 @@ const Header = () => {
           <p className="link">Contact</p>
         </Link>
       </div>
-      <Link to={"/register"}>
-        <div className="register-container link">
-          <h4>Register</h4>
-        </div>
-      </Link>
+      <div className="register-and-login-links">
+        <Link to={"/register"}>
+          <div className="register-container link">
+            <h4>Register</h4>
+          </div>
+        </Link>
+        <Link to={"/login"}>
+          <div className="register-container link">
+            <h4>Login</h4>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };

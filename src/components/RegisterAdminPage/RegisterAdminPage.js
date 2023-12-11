@@ -8,6 +8,8 @@ const RegisterAdminPage = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState([]);
+  const emailformat =
+    /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
 
   let navigate = useNavigate();
 
@@ -39,8 +41,8 @@ const RegisterAdminPage = () => {
       errors.push("Password needs contain at least 1 lowercase letter");
     }
     //// Need to update to include full email validation
-    if (!/[a-zA-Z]/.test(email)) {
-      errors.push("Email must contain at least one letter");
+    if (!emailformat.test(email)) {
+      errors.push("Please enter an email address");
     }
 
     if (/\s/.test(email)) {

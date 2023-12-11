@@ -9,6 +9,12 @@
   top: 0;
 }
 
+.register-and-login-links {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
 a {
   text-decoration: none;
 }
@@ -38,7 +44,7 @@ a {
 
 .register-container {
   /* padding: 0.25rem 1.25rem; */
-  padding-inline: 1.25rem;
+  padding-inline: 0.8rem;
   padding-top: 0.35rem;
   border-radius: 3px;
   background-color: var(--accent-color);
