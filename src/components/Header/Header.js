@@ -1,11 +1,8 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
-import { useEffect, useState } from "react";
 
 const Header = () => {
-  const { pathname } = useLocation();
   const navigate = useNavigate();
-  // const registerLogin = useState(<></>);
 
   const toggle = () => {
     document.getElementsByClassName("header-links")[0].classList.toggle("show");
