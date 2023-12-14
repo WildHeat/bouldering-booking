@@ -25,6 +25,8 @@ import PrivateRouteNotUser from "./components/PrivateRoute/PrivateRouteNotUser";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollPage />
+      <LoggedIn />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -93,8 +95,6 @@ function App() {
         <Route path="*" element={<NoPage />} />
       </Routes>
       <Footer />
-      <ScrollPage />
-      <LoggedIn />
     </BrowserRouter>
   );
 }

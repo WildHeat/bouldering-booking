@@ -23,7 +23,6 @@ const LoginPage = () => {
     })
       .then((response) => {
         if (response.status === 200) {
-          console.log("success");
           return response.json();
         } else {
           throw response;
@@ -31,6 +30,7 @@ const LoginPage = () => {
       })
       .then((body) => {
         localStorage.setItem("jwt", body.token);
+        localStorage.setItem("loggedin", "true");
         navigate("/");
       })
       .catch((reason) => {

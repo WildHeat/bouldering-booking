@@ -5,14 +5,7 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [login, setLogin] = useState(
-    localStorage.getItem("loggedin") === "true"
-  );
-  const registerLogin = useState(<></>);
-
-  useEffect(() => {
-    setLogin(localStorage.getItem("loggedin") === "true");
-  }, [pathname]);
+  // const registerLogin = useState(<></>);
 
   const toggle = () => {
     document.getElementsByClassName("header-links")[0].classList.toggle("show");
@@ -85,7 +78,7 @@ const Header = () => {
         >
           <p className="link">Contact</p>
         </div>
-        {login && (
+        {localStorage.getItem("loggedin") === "true" && (
           <>
             <div
               onClick={() => {
@@ -105,7 +98,7 @@ const Header = () => {
         )}
       </div>
       <div className="register-and-login-links">
-        {login ? (
+        {localStorage.getItem("loggedin") === "true" ? (
           <div
             onClick={() => {
               navigateTo("/account");
