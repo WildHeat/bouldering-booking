@@ -18,6 +18,9 @@ import CreateEventPage from "./components/CreateEventPage/CreateEventPage";
 import MyEventsPage from "./components/MyEventsPage/MyEventsPage";
 import AccountPage from "./components/AccountPage/AccountPage";
 import RegisterAdminPage from "./components/RegisterAdminPage/RegisterAdminPage";
+import PrivateRouteAdmin from "./components/PrivateRoute/PrivateRouteAdmin";
+import PrivateRouteUser from "./components/PrivateRoute/PrivateRouteUser";
+import PrivateRouteNotUser from "./components/PrivateRoute/PrivateRouteNotUser";
 
 function App() {
   return (
@@ -28,15 +31,64 @@ function App() {
         <Route path="/climb" element={<ClimbPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/events/:id" element={<EventViewPage />} />
-        <Route path="/events/:id/edit" element={<EditEventPage />} />
-        <Route path="/events/create" element={<CreateEventPage />} />
-        <Route path="/my-events" element={<MyEventsPage />} />
+        <Route
+          path="/events/:id/edit"
+          element={
+            <PrivateRouteAdmin>
+              <EditEventPage />
+            </PrivateRouteAdmin>
+          }
+        />
+        <Route
+          path="/events/create"
+          element={
+            <PrivateRouteAdmin>
+              <CreateEventPage />
+            </PrivateRouteAdmin>
+          }
+        />
+        <Route
+          path="/my-events"
+          element={
+            <PrivateRouteUser>
+              <MyEventsPage />
+            </PrivateRouteUser>
+          }
+        />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/account" element={<AccountPage />} />
-        <Route path="/register-admin" element={<RegisterAdminPage />} />
+        <Route
+          path="/login"
+          element={
+            <PrivateRouteNotUser>
+              <LoginPage />
+            </PrivateRouteNotUser>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <PrivateRouteNotUser>
+              <RegisterPage />
+            </PrivateRouteNotUser>
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <PrivateRouteUser>
+              <AccountPage />
+            </PrivateRouteUser>
+          }
+        />
+        <Route
+          path="/register-admin"
+          element={
+            <PrivateRouteAdmin>
+              <RegisterAdminPage />
+            </PrivateRouteAdmin>
+          }
+        />
 
         <Route path="*" element={<NoPage />} />
       </Routes>

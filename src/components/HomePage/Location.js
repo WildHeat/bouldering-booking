@@ -5,7 +5,7 @@ const Location = () => {
     <div className="location-outer-container">
       <div className="location-inner-container">
         <h1>AB Bouldering Location</h1>
-        <p1>State-of-the-art Neverland climbing centres</p1>
+        <p>State-of-the-art Neverland climbing centres</p>
         <div className="location">
           <h2>Neverland</h2>
           <div className="location-images-container">

@@ -15,7 +15,7 @@ const HomePage = () => {
       url: require("../../img/slide1.jpg"),
     },
     {
-      title: "Group Begginer Classes",
+      title: "Group Beginner Classes",
       description:
         "Meet new people and learn/share skills. No skill required. Fun is the focus!",
       button: "Classes",

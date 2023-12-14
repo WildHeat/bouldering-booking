@@ -51,6 +51,13 @@ const AccountPage = () => {
     checkUser();
   }, [navigate]);
 
+  const logout = () => {
+    localStorage.setItem("jwt", "");
+    localStorage.setItem("loggedin", false);
+    localStorage.setItem("admin", false);
+    navigate("/");
+  };
+
   return (
     <div className="account-page-container">
       <h1>My Account</h1>
@@ -70,6 +77,9 @@ const AccountPage = () => {
             onClick={() => setShowEditForm(!showEditForm)}
           >
             Edit
+          </button>
+          <button className="edit-button" onClick={() => logout()}>
+            Logout
           </button>
         </div>
         {showEditForm && (

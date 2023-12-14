@@ -8,7 +8,7 @@ const Event = ({ eventId, title, description, index, url, date, time }) => {
     <div
       className="event"
       style={{
-        "background-image": `url('${url}')`,
+        backgroundImage: `url('${url}')`,
       }}
       key={index}
       onClick={() => {

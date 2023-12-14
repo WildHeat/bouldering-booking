@@ -57,6 +57,16 @@ a {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
+.behind-navbar-overlay {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.468);
+}
+
 .logo,
 .register-container {
   z-index: 99997;
@@ -65,6 +75,7 @@ a {
 }
 
 .logo:hover {
+  cursor: pointer;
   color: var(--accent-color);
 }
 

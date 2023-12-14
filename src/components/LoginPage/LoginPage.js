@@ -35,6 +35,7 @@ const LoginPage = () => {
       })
       .catch((reason) => {
         setErrorMessage(["Failed. Try again."]);
+        return;
       });
   };
 

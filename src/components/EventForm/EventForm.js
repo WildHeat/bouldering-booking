@@ -10,10 +10,6 @@ const EventForm = ({ event, setEvent, listOfAdminNames }) => {
 
   return (
     <div className="event-form-container">
-      <label htmlFor="id">ID: </label>
-      <input type="text" id="id" value={event.id} disabled />
-      <br />
-
       <label htmlFor="title">Title: </label>
       <input
         type="text"
