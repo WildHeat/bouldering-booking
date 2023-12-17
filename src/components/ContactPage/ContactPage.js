@@ -5,8 +5,23 @@ import { Link } from "react-router-dom";
 const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [enquiry, setEnquiry] = useState("");
 
+  const handleSubmitContactRequest = () => {
+    fetch(process.env.REACT_APP_BASE_URL + "/api/v1/mail", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        subject: subject,
+        message: enquiry,
+      }),
+    });
+  };
   return (
     <div className="contact-page-container">
       <div className="contact-content-container">
@@ -20,7 +35,7 @@ const ContactPage = () => {
           </Link>{" "}
           page.
         </p>
-        <div className="contact-form-container">
+        <form className="contact-form-container">
           <div className="contact-input-container">
             <label>Name</label>
             <input
@@ -42,8 +57,18 @@ const ContactPage = () => {
             />
           </div>
           <div className="contact-input-container">
-            <label>Enquiry</label>
+            <label>Subject</label>
             <input
+              type="text"
+              value={subject}
+              onChange={(e) => {
+                setSubject(e.target.value);
+              }}
+            />
+          </div>
+          <div className="contact-input-container">
+            <label>Enquiry</label>
+            <textarea
               id="enquiry-input"
               type="text"
               value={enquiry}
@@ -53,7 +78,7 @@ const ContactPage = () => {
             />
           </div>
           <div className="contact-send-button">Send</div>
-        </div>
+        </form>
       </div>
     </div>
   );

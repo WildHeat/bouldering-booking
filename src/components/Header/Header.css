@@ -164,6 +164,7 @@ a {
 }
 
 .dropdown:hover .dropdown-button {
+  cursor: pointer;
   background-color: var(--light-color);
   color: var(--accent-color);
 }
