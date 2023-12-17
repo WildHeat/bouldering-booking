@@ -128,3 +128,42 @@ a {
     display: none;
   }
 }
+
+.content {
+  display: none;
+  border-radius: 8px;
+  background-color: var(--dark-color);
+}
+
+.content * {
+  border-radius: 8px;
+  display: block;
+  padding: 0.7em 0.7em 0.7em 0.5em;
+}
+
+.content *:hover {
+  display: block;
+  background-color: #290a3d;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.dropdown:hover .content {
+  display: block;
+  position: absolute;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.468);
+}
+
+.dropdown-button {
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  margin-block: auto;
+  padding: 0.8em 2em;
+  border-radius: 14px;
+}
+
+.dropdown:hover .dropdown-button {
+  background-color: var(--light-color);
+  color: var(--accent-color);
+}

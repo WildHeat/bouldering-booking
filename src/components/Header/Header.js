@@ -23,6 +23,13 @@ const Header = () => {
     navigate(location);
   };
 
+  const logout = () => {
+    localStorage.setItem("jwt", "");
+    localStorage.setItem("loggedin", false);
+    localStorage.setItem("admin", false);
+    navigate("/");
+  };
+
   return (
     <div className="header-container">
       <div className="toggle-container" onClick={toggle}>
@@ -75,34 +82,36 @@ const Header = () => {
         >
           <p className="link">Contact</p>
         </div>
-        {localStorage.getItem("loggedin") === "true" && (
-          <>
-            <div
-              onClick={() => {
-                navigateTo("/my-events");
-              }}
-            >
-              <p className="link">My Events</p>
-            </div>
-            <div
-              onClick={() => {
-                navigateTo("/logout");
-              }}
-            >
-              <p className="link">Logout</p>
-            </div>
-          </>
-        )}
       </div>
       <div className="register-and-login-links">
         {localStorage.getItem("loggedin") === "true" ? (
-          <div
-            onClick={() => {
-              navigateTo("/account");
-            }}
-          >
-            <div className="register-container link">
-              <h4>My Account</h4>
+          <div className="dropdown">
+            <button className="dropdown-button">Account ▼</button>
+            <div className="content">
+              <div
+                className="dropdown-link"
+                onClick={() => {
+                  navigateTo("/my-events");
+                }}
+              >
+                <p>My Events</p>
+              </div>
+              <div
+                className="dropdown-link"
+                onClick={() => {
+                  navigateTo("/account");
+                }}
+              >
+                <p>My Account</p>
+              </div>
+              <div
+                className="dropdown-link"
+                onClick={() => {
+                  logout();
+                }}
+              >
+                <p>Logout</p>
+              </div>
             </div>
           </div>
         ) : (
