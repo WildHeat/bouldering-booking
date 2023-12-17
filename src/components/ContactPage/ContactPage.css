@@ -66,3 +66,41 @@
   background-color: var(--light-color);
   color: var(--accent-color);
 }
+
+.contact-input-container span {
+  color: red;
+}
+
+.success-overlay {
+  display: block;
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.47);
+}
+
+.success-message {
+  border-radius: 13px;
+  position: relative;
+  width: fit-content;
+  top: 30%;
+  padding: 2em 4em 4em 4em;
+  margin-inline: auto;
+  background-color: white;
+  width: 30%;
+}
+
+.success-message button {
+  font-size: 1.3em;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  border-radius: 5px;
+  margin-top: 2em;
+  border: solid var(--accent-color);
+  padding: 0.25em 0.75em;
+}
+
+.success-message button:hover {
+  cursor: pointer;
+  background-color: var(--light-color);
+  color: var(--accent-color);
+}

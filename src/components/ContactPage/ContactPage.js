@@ -7,9 +7,30 @@ const ContactPage = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [enquiry, setEnquiry] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const emailformat =
+    /^([A-Za-z0-9_\-.+])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+  const [successMessageStyle, setSuccessMessageStyle] = useState({
+    display: "none",
+  });
 
-  const handleSubmitContactRequest = () => {
-    fetch(process.env.REACT_APP_BASE_URL + "/api/v1/mail", {
+  const handleSubmitContactRequest = async () => {
+    setErrorMessage("");
+    if (!emailformat.test(email)) {
+      setErrorMessage("Please enter a valid email address");
+      return;
+    }
+    if (subject === "") {
+      setErrorMessage("Subject can't be empty");
+      return;
+    }
+
+    if (enquiry === "") {
+      setErrorMessage("Enquiry field can't be empty");
+      return;
+    }
+
+    await fetch(process.env.REACT_APP_BASE_URL + "/api/v1/mail", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -20,6 +41,8 @@ const ContactPage = () => {
         subject: subject,
         message: enquiry,
       }),
+    }).then((response) => {
+      if (response.status === 200) setSuccessMessageStyle({ display: "block" });
     });
   };
   return (
@@ -47,7 +70,9 @@ const ContactPage = () => {
             />
           </div>
           <div className="contact-input-container">
-            <label>Email</label>
+            <label>
+              Email <span>*</span>
+            </label>
             <input
               type="text"
               value={email}
@@ -57,7 +82,9 @@ const ContactPage = () => {
             />
           </div>
           <div className="contact-input-container">
-            <label>Subject</label>
+            <label>
+              Subject <span>*</span>
+            </label>
             <input
               type="text"
               value={subject}
@@ -67,7 +94,9 @@ const ContactPage = () => {
             />
           </div>
           <div className="contact-input-container">
-            <label>Enquiry</label>
+            <label>
+              Enquiry <span>*</span>
+            </label>
             <textarea
               id="enquiry-input"
               type="text"
@@ -77,8 +106,30 @@ const ContactPage = () => {
               }}
             />
           </div>
-          <div className="contact-send-button">Send</div>
+          <p className="error-message">{errorMessage}</p>
+          <button
+            className="contact-send-button"
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmitContactRequest();
+            }}
+          >
+            Send
+          </button>
         </form>
+        <div className="success-overlay" style={successMessageStyle}>
+          <div className="success-message">
+            <h1>Enquiry submitted</h1>
+            <br />
+            <p>
+              We have received your message and will get back to you as soon as
+              possible. Thank you for your patience. :)
+            </p>
+            <Link to={"/"}>
+              <button>Home</button>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

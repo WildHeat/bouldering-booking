@@ -41,9 +41,8 @@ const RegisterPage = () => {
     if (!/[a-z]/.test(password)) {
       errors.push("Password needs contain at least 1 lowercase letter");
     }
-    //// Need to update to include full email validation
     if (!emailformat.test(email)) {
-      errors.push("Please enter an email address");
+      errors.push("Please enter a valid email address");
     }
 
     if (/\s/.test(email)) {
