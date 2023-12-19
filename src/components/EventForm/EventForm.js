@@ -96,8 +96,13 @@ const EventForm = ({ event, setEvent, listOfAdminNames }) => {
           handleUpdateField(e);
         }}
       >
-        {listOfAdminNames.map((name) => {
-          return <option value={name}>{name}</option>;
+        <option value={""}>Select organiser</option>
+        {listOfAdminNames.map((name, index) => {
+          return (
+            <option key={index} value={name}>
+              {name}
+            </option>
+          );
         })}
       </select>
       {/* <input type="text" id="organiser" value={event.organiser} disabled /> */}

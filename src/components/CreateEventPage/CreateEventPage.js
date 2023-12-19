@@ -4,6 +4,9 @@ import EventForm from "../EventForm/EventForm";
 const CreateEventPage = () => {
   const [listOfAdminNames, setListOfAdminNames] = useState([]);
   const [responseMessage, setResponseMessage] = useState([]);
+  const [successMessageStyle, setSuccessMessageStyle] = useState({
+    display: "none",
+  });
   const [event, setEvent] = useState({
     id: undefined,
     title: "",
@@ -35,7 +38,6 @@ const CreateEventPage = () => {
           return response.json();
         })
         .then((body) => {
-          console.log(body);
           setListOfAdminNames([...body]);
         })
         .catch((response) => {
@@ -89,6 +91,7 @@ const CreateEventPage = () => {
     })
       .then((response) => {
         if (response !== 201) {
+          setSuccessMessageStyle({ display: "block" });
           throw response;
         }
         return response.json();
@@ -106,15 +109,34 @@ const CreateEventPage = () => {
 
   return (
     <div className="create-event-page-container">
+      <div
+        className="updated-event-overlay"
+        style={successMessageStyle}
+        onClick={() => {
+          setSuccessMessageStyle({
+            display: "none",
+          });
+        }}
+      >
+        <div className="updated-event-content">
+          <h3>Event Created!</h3>
+        </div>
+      </div>
       <h1>Create New Event</h1>
       <EventForm
         event={event}
         setEvent={setEvent}
         listOfAdminNames={listOfAdminNames}
       />
-      {responseMessage.map((message) => {
-        return <p>{message}</p>;
-      })}
+      <div className="error-message-container">
+        {responseMessage.map((message, index) => {
+          return (
+            <p className="error-message" key={index}>
+              {message}
+            </p>
+          );
+        })}
+      </div>
       <div
         className="submit-form-button"
         onClick={() => {

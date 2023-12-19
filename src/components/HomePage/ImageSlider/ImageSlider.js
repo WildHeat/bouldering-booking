@@ -1,9 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./ImageSlider.css";
+import { useNavigate } from "react-router-dom";
 
 const ImageSlider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timerRef = useRef(null);
+  const navigate = useNavigate();
 
   const previousSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -39,7 +41,14 @@ const ImageSlider = ({ slides }) => {
           <div className="overlay-content-container">
             <h1>{slides[currentIndex].title}</h1>
             <p>{slides[currentIndex].description}</p>
-            <div className="image-button">{slides[currentIndex].button}</div>
+            <button
+              className="image-button"
+              onClick={() => {
+                navigate(slides[currentIndex].link);
+              }}
+            >
+              {slides[currentIndex].button}
+            </button>
           </div>
         </div>
       </div>

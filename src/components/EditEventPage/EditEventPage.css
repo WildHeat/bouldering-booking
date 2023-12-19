@@ -20,3 +20,25 @@
 .create-event-page-container h1 {
   text-align: center;
 }
+
+.updated-event-overlay {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.479);
+}
+
+.updated-event-content {
+  border-radius: 12px;
+  padding: 3em 5em;
+  width: fit-content;
+  margin-inline: auto;
+  background-color: var(--light-color);
+  position: relative;
+  top: 40%;
+}
+
+.error-message-container {
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}

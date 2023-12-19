@@ -134,25 +134,21 @@ const EventViewPage = () => {
           <p className="event-description">{event.description}</p>
           <br />
           <p className="event-description">
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore
-            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum. irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
+            Joining AB Bouldering Gym classes offers an exciting blend of
+            learning and fun. Led by experienced instructors, these sessions not
+            only enhance bouldering skills but also boost overall performance by
+            fostering mental resilience and problem-solving abilities. Beyond
+            the physical training, the classes create a vibrant community
+            atmosphere where participants thrive, pushing boundaries while
+            enjoying the thrill of overcoming challenges. It's an opportunity to
+            learn, grow, and have an absolute blast along the way!
           </p>
           <br />
           <p className="event-description">
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore
-            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum. irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
+            These classes create an electric, supportive community where
+            individuals thrive, pushing personal boundaries and enjoying the
+            thrill of conquering challenges. It's an exhilarating journey of
+            growth, boosting performance, and creating lasting, joyful memories.
           </p>
         </div>
 

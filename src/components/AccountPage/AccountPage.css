@@ -40,5 +40,4 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1em 5em;
-  /* justify-content: space-evenly; */
 }

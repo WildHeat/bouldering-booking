@@ -103,3 +103,7 @@
   width: 5em;
   padding: 0.5em 0.25em;
 }
+.overlay-delete-button:hover {
+  cursor: pointer;
+  background-color: yellow;
+}

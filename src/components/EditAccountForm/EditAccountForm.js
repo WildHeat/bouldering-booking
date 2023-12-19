@@ -103,7 +103,7 @@ const EditAccountForm = ({ firstname, lastname, userEmail, setUser }) => {
           </u>
         </p>
         <div>
-          <label htmlFor="current-password">Enter your password</label>
+          <label htmlFor="current-password">Enter your password:</label>
           <input
             id="current-password"
             autoComplete="current-password"

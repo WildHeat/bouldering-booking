@@ -16,6 +16,8 @@ label {
   font-size: 0.7em;
 }
 .edit-account-form input {
+  margin-left: 1em;
+  padding-left: 0.4em;
   width: 15em;
   height: 1.8em;
 }

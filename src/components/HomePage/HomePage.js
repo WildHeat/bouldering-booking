@@ -13,19 +13,23 @@ const HomePage = () => {
         "Join the conquest to overcome any wall that is placed in front of you :)",
       button: "Join Today!",
       url: require("../../img/slide1.jpg"),
+      link: "/register",
     },
     {
-      title: "Group Beginner Classes",
+      title: "Group Classes",
       description:
         "Meet new people and learn/share skills. No skill required. Fun is the focus!",
       button: "Classes",
       url: require("../../img/slide3.jpg"),
+      link: "/events",
     },
     {
-      title: "Kids Parties",
-      description: "Have organised party for your children and their friends!",
-      button: "Party",
+      title: "Parties",
+      description:
+        "Have organised parties! Send a request to have organised parties in our facility.",
+      button: "Send Request",
       url: require("../../img/slide2.jpg"),
+      link: "/contact",
     },
   ];
 

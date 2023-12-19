@@ -6,6 +6,9 @@ const EditEventPage = () => {
   const eventId = window.location.href.split("/")[4];
   const [listOfAdminNames, setListOfAdminNames] = useState([]);
   const [responseMessage, setResponseMessage] = useState("");
+  const [successMessageStyle, setSuccessMessageStyle] = useState({
+    display: "none",
+  });
   const [event, setEvent] = useState({
     id: undefined,
     title: "",
@@ -62,7 +65,6 @@ const EditEventPage = () => {
           return response.json();
         })
         .then((body) => {
-          console.log(body);
           setListOfAdminNames([...body]);
         })
         .catch((response) => {
@@ -86,7 +88,7 @@ const EditEventPage = () => {
       .then((response) => {
         if (response.status === 200) {
           setResponseMessage("Updated!");
-          alert("Updated");
+          setSuccessMessageStyle({ display: "block" });
         } else {
           throw response;
         }
@@ -99,6 +101,19 @@ const EditEventPage = () => {
 
   return (
     <div className="admin-event-page-container">
+      <div
+        className="updated-event-overlay"
+        style={successMessageStyle}
+        onClick={() => {
+          setSuccessMessageStyle({
+            display: "none",
+          });
+        }}
+      >
+        <div className="updated-event-content">
+          <h3>Event updated!</h3>
+        </div>
+      </div>
       <h1>Edit Event - {eventId}</h1>
       <EventForm
         event={event}
