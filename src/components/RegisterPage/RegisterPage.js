@@ -74,10 +74,16 @@ const RegisterPage = () => {
           console.log("SUCCESS");
           return response.json();
         }
+        throw response;
       })
       .then((body) => {
         localStorage.setItem("jwt", body.token);
+        localStorage.setItem("loggedin", "true");
         navigate("/");
+      })
+      .catch((body) => {
+        setErrorMessage(["Failed register"]);
+        console.error("Failed register");
       });
   }
 
