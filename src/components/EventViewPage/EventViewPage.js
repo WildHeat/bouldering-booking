@@ -87,7 +87,30 @@ const EventViewPage = () => {
       setAboveButtonText("Event has already past. Sorry!");
       return;
     }
-    addUserToEvent();
+    // addUserToEvent();
+    addUserToEventWithSession();
+  };
+  const addUserToEventWithSession = async () => {
+    await fetch(
+      process.env.REACT_APP_BASE_URL + `/api/v1/stripe/all/${eventId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      }
+    )
+      .then((response) => {
+        if (response.status === 200) return response.text();
+        throw response;
+      })
+      .then((url) => {
+        window.open(url);
+      })
+      .catch((response) => {
+        console.error(response.status);
+      });
   };
 
   const addUserToEvent = async () => {

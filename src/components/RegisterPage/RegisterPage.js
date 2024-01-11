@@ -71,7 +71,6 @@ const RegisterPage = () => {
     })
       .then((response) => {
         if (response.status === 201) {
-          console.log("SUCCESS");
           return response.json();
         }
         throw response.text();
