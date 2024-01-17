@@ -11,12 +11,11 @@
   font-size: 1.25em;
 }
 
-.contact-input-container label {
-  font-size: 1.5em;
-}
-
 .contact-content-container h1 {
   font-size: 2.5rem;
+}
+.contact-input-container label {
+  font-size: 1.5em;
 }
 
 .contact-input-container {

@@ -21,6 +21,7 @@ import RegisterAdminPage from "./components/RegisterAdminPage/RegisterAdminPage"
 import PrivateRouteAdmin from "./components/PrivateRoute/PrivateRouteAdmin";
 import PrivateRouteUser from "./components/PrivateRoute/PrivateRouteUser";
 import PrivateRouteNotUser from "./components/PrivateRoute/PrivateRouteNotUser";
+import BookingCompletePage from "./components/BookingCompletePage/BookingCompletePage";
 
 function App() {
   return (
@@ -80,6 +81,14 @@ function App() {
           element={
             <PrivateRouteUser>
               <AccountPage />
+            </PrivateRouteUser>
+          }
+        />
+        <Route
+          path="/booking-completed"
+          element={
+            <PrivateRouteUser>
+              <BookingCompletePage />
             </PrivateRouteUser>
           }
         />

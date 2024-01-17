@@ -102,10 +102,19 @@ const EventViewPage = () => {
       }
     )
       .then((response) => {
-        if (response.status === 200) return response.text();
+        if (response.status === 200) {
+          return response.text();
+        } else if (response.status === 409) {
+          console.log("CONFLICTTT");
+          setAboveButtonText("You're Already signed up! Nice!");
+        }
         throw response;
       })
       .then((url) => {
+        if (url === "") {
+          setAboveButtonText("Success! You have been added to the list");
+          return;
+        }
         window.open(url);
       })
       .catch((response) => {
@@ -126,9 +135,10 @@ const EventViewPage = () => {
       }
     )
       .then((response) => {
-        console.log(response);
+        console.log("got a response");
         if (response.status === 200) {
           setAboveButtonText("Success! You have been added to the list");
+          navigate("/booking-completed");
           return response.json();
         } else if (response.status === 409) {
           setAboveButtonText("You're Already signed up! Nice!");
@@ -142,7 +152,7 @@ const EventViewPage = () => {
         setEvent(body);
       })
       .catch((response) => {
-        console.log(response);
+        console.error(response);
       });
   };
 

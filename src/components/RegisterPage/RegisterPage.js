@@ -10,7 +10,7 @@ const RegisterPage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState([]);
   const emailformat =
-    /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+    /^([a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-])+@([a-zA-Z0-9.-])+\.([A-Za-z]{2,4})$/;
 
   let navigate = useNavigate();
 
@@ -73,7 +73,7 @@ const RegisterPage = () => {
         if (response.status === 201) {
           return response.json();
         }
-        throw response.text();
+        throw response;
       })
       .then((body) => {
         localStorage.setItem("jwt", body.token);
@@ -81,8 +81,10 @@ const RegisterPage = () => {
         navigate("/");
       })
       .catch((response) => {
-        setErrorMessage([`Failed register - ${response}`]);
-        console.error(response);
+        return response.text();
+      })
+      .then((text) => {
+        setErrorMessage([`Failed register - ${text}`]);
       });
   }
 
