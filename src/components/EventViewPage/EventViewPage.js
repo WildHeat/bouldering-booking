@@ -122,40 +122,6 @@ const EventViewPage = () => {
       });
   };
 
-  const addUserToEvent = async () => {
-    await fetch(
-      process.env.REACT_APP_BASE_URL +
-        `/api/v1/events/user/add-user/${eventId}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        },
-      }
-    )
-      .then((response) => {
-        console.log("got a response");
-        if (response.status === 200) {
-          setAboveButtonText("Success! You have been added to the list");
-          navigate("/booking-completed");
-          return response.json();
-        } else if (response.status === 409) {
-          setAboveButtonText("You're Already signed up! Nice!");
-          return response.json();
-        } else {
-          setAboveButtonText("Something went wrong :(");
-          throw response;
-        }
-      })
-      .then((body) => {
-        setEvent(body);
-      })
-      .catch((response) => {
-        console.error(response);
-      });
-  };
-
   return (
     <div className="event-view-content-container">
       <div className="head-line">

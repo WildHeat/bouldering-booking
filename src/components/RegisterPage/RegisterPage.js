@@ -84,7 +84,7 @@ const RegisterPage = () => {
         return response.text();
       })
       .then((text) => {
-        setErrorMessage([`Failed register - ${text}`]);
+        setErrorMessage([`Failed register: ${text}`]);
       });
   }
 
