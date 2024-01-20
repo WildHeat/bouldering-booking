@@ -45,9 +45,15 @@
 .account-page-image-container {
   height: 80vh;
   max-width: 50em;
-  min-width: 20%;
+  min-width: 40%;
   flex: 1;
   background-size: cover;
   background-position: center;
   background-image: url("../../img/climb1.jpg");
+}
+
+.account-page-information-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em 1em;
 }

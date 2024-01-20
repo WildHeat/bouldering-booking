@@ -62,34 +62,36 @@ const AccountPage = () => {
     <div className="account-page-container">
       <div className="account-content-container">
         <div className="account-page-image-container"></div>
-        <div className="account-details-container">
-          <h1>My Account</h1>
-          <h3>Your details</h3>
-          <p className="account-detail">First Name: {user.firstName}</p>
-          <p className="account-detail">Last Name: {user.lastName}</p>
-          <p className="account-detail">Email: {user.email}</p>
-          <p className="account-detail">
-            Booked Events: <Link to={"/my-events"}>Events</Link>
-          </p>
-          {additionalComponents}
-          <button
-            className="edit-button"
-            onClick={() => setShowEditForm(!showEditForm)}
-          >
-            Edit
-          </button>
-          <button className="edit-button" onClick={() => logout()}>
-            Logout
-          </button>
+        <div className="account-page-information-container">
+          <div className="account-details-container">
+            <h1>My Account</h1>
+            <h3>Your details</h3>
+            <p className="account-detail">First Name: {user.firstName}</p>
+            <p className="account-detail">Last Name: {user.lastName}</p>
+            <p className="account-detail">Email: {user.email}</p>
+            <p className="account-detail">
+              Booked Events: <Link to={"/my-events"}>Events</Link>
+            </p>
+            {additionalComponents}
+            <button
+              className="edit-button"
+              onClick={() => setShowEditForm(!showEditForm)}
+            >
+              Edit
+            </button>
+            <button className="edit-button" onClick={() => logout()}>
+              Logout
+            </button>
+          </div>
+          {showEditForm && (
+            <EditAccountForm
+              firstname={user.firstName}
+              lastname={user.lastName}
+              userEmail={user.email}
+              setUser={setUser}
+            />
+          )}
         </div>
-        {showEditForm && (
-          <EditAccountForm
-            firstname={user.firstName}
-            lastname={user.lastName}
-            userEmail={user.email}
-            setUser={setUser}
-          />
-        )}
       </div>
     </div>
   );
