@@ -1,5 +1,9 @@
 .login-page-container {
-  padding: 10%;
+  /* padding: 10%; */
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  gap: 2em 0;
 }
 
 .login-form-container {
@@ -43,4 +47,14 @@
   color: red;
   font-size: large;
   font-weight: 600;
+}
+
+.login-page-image-container {
+  height: 80vh;
+  max-width: 70em;
+  min-width: 40%;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../img/class-private.jpg");
 }

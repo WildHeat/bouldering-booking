@@ -113,6 +113,7 @@ const EventViewPage = () => {
       .then((url) => {
         if (url === "") {
           setAboveButtonText("Success! You have been added to the list");
+          navigate("/booking-completed");
           return;
         }
         window.open(url);

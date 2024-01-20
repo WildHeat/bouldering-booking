@@ -60,10 +60,10 @@ const AccountPage = () => {
 
   return (
     <div className="account-page-container">
-      <h1>My Account</h1>
-
       <div className="account-content-container">
+        <div className="account-page-image-container"></div>
         <div className="account-details-container">
+          <h1>My Account</h1>
           <h3>Your details</h3>
           <p className="account-detail">First Name: {user.firstName}</p>
           <p className="account-detail">Last Name: {user.lastName}</p>

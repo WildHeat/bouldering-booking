@@ -90,6 +90,7 @@ const RegisterPage = () => {
 
   return (
     <div className="register-page-container">
+      <div className="register-page-image-container"></div>
       <div className="register-form-container">
         <h2>Register</h2>
         <input

@@ -58,6 +58,7 @@ const LoginPage = () => {
 
   return (
     <div className="login-page-container">
+      <div className="login-page-image-container"></div>
       <div className="login-form-container">
         <h2>Login</h2>
         <input

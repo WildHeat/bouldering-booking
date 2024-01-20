@@ -66,7 +66,7 @@ const EditAccountForm = ({ firstname, lastname, userEmail, setUser }) => {
   };
 
   return (
-    <div className="edit-account-form-contaner">
+    <div className="edit-account-form-container">
       <form className="edit-account-form">
         <h3>Edit your credentials</h3>
         <div>
