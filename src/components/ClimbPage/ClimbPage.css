@@ -62,10 +62,6 @@
   color: var(--accent-color);
 }
 
-.climb-info-card-text {
-  padding: 1em;
-}
-
 .climb-image {
   background-position: center;
   background-size: cover;
