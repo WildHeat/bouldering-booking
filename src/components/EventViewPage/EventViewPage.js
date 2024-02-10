@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./EventViewPage.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const EventViewPage = () => {
   const eventId = window.location.href.split("/events/")[1];
@@ -13,8 +13,22 @@ const EventViewPage = () => {
   const [adminDeleteButton, setAdminDeleteButton] = useState(false);
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  const [showLoadingModal, setShowLoadingModal] = useState(false);
+  const [loadingHeading, setLoadingHeading] = useState(
+    "Please standby while we book you in..."
+  );
+  const [loadingText, setLoadingText] = useState(
+    <p>
+      he event will also show up in the{" "}
+      <b>
+        <Link to={"/my-events"}>My Events</Link>
+      </b>{" "}
+      page.
+    </p>
+  );
 
   const toggleModal = () => setShowModal(!showModal);
+  const toggleLoadingModel = () => setShowLoadingModal(!showLoadingModal);
 
   const handleDeleteEvent = async () => {
     await fetch(process.env.REACT_APP_BASE_URL + `/api/v1/events/${eventId}`, {
@@ -87,10 +101,27 @@ const EventViewPage = () => {
       setAboveButtonText("Event has already past. Sorry!");
       return;
     }
-    // addUserToEvent();
+    if (event.spacesLeft <= 0) {
+      setAboveButtonText("Sorry there are no more spaces left");
+      return;
+    }
     addUserToEventWithSession();
   };
   const addUserToEventWithSession = async () => {
+    if (event.price === 0) {
+      setLoadingHeading("Thank you and see you soon!");
+      setLoadingText(
+        <p>
+          You will receieve a confirmation email and the event should show up in
+          your
+          <b>
+            <Link to={"/my-events"}> My Events </Link>
+          </b>
+          page.
+        </p>
+      );
+    }
+    toggleLoadingModel();
     await fetch(
       process.env.REACT_APP_BASE_URL + `/api/v1/stripe/all/${eventId}`,
       {
@@ -105,8 +136,9 @@ const EventViewPage = () => {
         if (response.status === 200) {
           return response.text();
         } else if (response.status === 409) {
-          console.log("CONFLICTTT");
           setAboveButtonText("You're Already signed up! Nice!");
+          setLoadingHeading("You're Already signed up! Nice!");
+          toggleLoadingModel();
         }
         throw response;
       })
@@ -117,6 +149,16 @@ const EventViewPage = () => {
           return;
         }
         window.open(url);
+        setLoadingText(
+          <p>
+            Once we have received your payment you will receive a comfirmation
+            email. The event will also show up in the{" "}
+            <b>
+              <Link to={"/my-events"}>My Events</Link>
+            </b>{" "}
+            page.
+          </p>
+        );
       })
       .catch((response) => {
         console.error(response.status);
@@ -194,6 +236,20 @@ const EventViewPage = () => {
           )}
         </div>
       </div>
+      {showLoadingModal && (
+        <div className="modal-container">
+          <div
+            className="delete-overlay"
+            onClick={() => toggleLoadingModel()}
+          ></div>
+          <div className="modal">
+            <h2>{loadingHeading}</h2>
+            <br />
+            {loadingText}
+          </div>
+          <></>
+        </div>
+      )}
       {showModal && (
         <div className="modal-container">
           <div className="delete-overlay" onClick={() => toggleModal()}></div>
