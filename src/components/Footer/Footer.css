@@ -43,11 +43,24 @@
   padding-bottom: 1em;
 }
 
-.footer-outer-links div {
+.footer-links {
   width: 50px;
   height: 50px;
-  background-color: var(--light-color);
+  /* background-color: var(--light-color); */
+  background-size: contain;
   border-radius: 50%;
+}
+
+.linkedin-link {
+  background-image: url(../../img/linkedin.png);
+}
+
+.git-link {
+  background-image: url(../../img/git.png);
+}
+
+.footer-links:hover {
+  cursor: pointer;
 }
 
 .copyright {

@@ -11,6 +11,11 @@ const BookingCompletePage = () => {
           very shortly!
         </p>
       </div>
+      <div className="image-container booking-complete-image">
+        <div className="overlay">
+          <div className="overlay-content-container"></div>
+        </div>
+      </div>
     </div>
   );
 };

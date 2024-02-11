@@ -14,3 +14,7 @@
 .booking-complete-content-container h1 {
   font-size: 2.5rem;
 }
+
+.booking-complete-image {
+  background-image: url(../../img/climb4.jpg);
+}
