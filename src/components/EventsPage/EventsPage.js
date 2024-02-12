@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./EventsPage.css";
 import Event from "./Event";
-import Data from "./EventsData.json";
 import { useNavigate } from "react-router-dom";
 
 const EventsPage = () => {
   let navigate = useNavigate();
-  const [listOfEvent, setListOfEvents] = useState(Data["data"]);
+  const [listOfEvent, setListOfEvents] = useState([]);
   const [editButton, setEditButton] = useState(<></>);
 
   useEffect(() => {

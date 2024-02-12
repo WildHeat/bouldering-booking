@@ -19,7 +19,7 @@ const EventViewPage = () => {
   );
   const [loadingText, setLoadingText] = useState(
     <p>
-      he event will also show up in the{" "}
+      The event will also show up in the{" "}
       <b>
         <Link to={"/my-events"}>My Events</Link>
       </b>{" "}
