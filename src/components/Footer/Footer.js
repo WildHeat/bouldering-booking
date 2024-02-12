@@ -14,10 +14,18 @@ const Footer = () => {
           Monday - Friday: 07:30 - 22:30 Sat & Sun: 09:00 - 21:00
         </div>
         <div className="footer-outer-links">
-          <a href="https://www.linkedin.com/in/aron-berhane-0485b820b/">
+          <a
+            href="https://www.linkedin.com/in/aron-berhane-0485b820b/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="footer-links linkedin-link"></div>
           </a>
-          <a href="https://github.com/wildheat">
+          <a
+            href="https://github.com/wildheat"
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="footer-links git-link"></div>
           </a>
         </div>
